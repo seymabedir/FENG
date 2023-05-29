@@ -13,6 +13,7 @@ import 'package:project/pages/RecipePage.dart';
 import 'package:project/pages/SearchPage.dart';
 import 'package:project/pages/SettingsPage.dart';
 import 'package:project/pages/SuggestionPage.dart';
+import 'package:project/utilities/routes.dart';
 
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightBlue,//white
       ),
       home: const HomePage(title: ''),
+      routes: Routes.routes,
     );
   }
 }
