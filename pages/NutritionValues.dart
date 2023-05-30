@@ -3,22 +3,63 @@ import 'package:project/main.dart';
 import 'package:project/pages/SearchPage.dart';
 import 'package:project/pages/FavoriteItemPage.dart';
 import 'package:project/pages/CategoryPage.dart';
+import 'package:project/widgets/NutritionValuesWidget.dart';
 
-class NutritionValues extends StatefulWidget {
+class NutritionValues extends StatelessWidget {
   const NutritionValues({Key? key}) : super(key: key);
 
   @override
-  _NutritionValuesState createState() => _NutritionValuesState();
-}
-
-class _NutritionValuesState extends State<NutritionValues> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Besin Değerleri'),
+      appBar: AppBar(title: const Text(''),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
-      body: Column(
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          color: Colors.lightBlueAccent,
+          height: kToolbarHeight,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home_outlined),
+                onPressed: () {
+                  _GoHome(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  _GoSearch(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.favorite_border_outlined),
+                onPressed: () {
+                  _GoFavItems(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.dataset_outlined),
+                onPressed: () {
+                  _GoCategories(context);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: _buildNutriValues(),
+    );
+  }
+
+  /*body: Column(
         children: [
           SizedBox(
             height: 15,
@@ -74,7 +115,7 @@ class _NutritionValuesState extends State<NutritionValues> {
           ),
           Center(
             child: Text(
-              'BESİN DEĞERLERİ',
+              'ETİKET BİLGİLERİ',
               style: TextStyle(
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
@@ -105,46 +146,7 @@ class _NutritionValuesState extends State<NutritionValues> {
             ),
           ),
         ],
-
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          color: Colors.lightBlueAccent,
-          height: kToolbarHeight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                icon: Icon(Icons.home_outlined),
-                onPressed: () {
-                  _GoHome(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  _GoSearch(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
-                onPressed: () {
-                  _GoFavItems(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.dataset_outlined),
-                onPressed: () {
-                  _GoCategories(context);
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
+      ),*/
   void _GoHome(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return HomePage(title: '');
@@ -167,6 +169,20 @@ class _NutritionValuesState extends State<NutritionValues> {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return CategoryPage();
     },));
+  }
+
+  _buildNutriValues() {
+    return NutritionValuesWidget(
+      categoryName: "SÜT VE SÜT ÜRÜNLERİ",
+      imageUrl: "",
+      productName: "ITAMBE SÜT",
+      productInfo: "xxxxxxxxxxxx."
+          '\n * LAKTOZ İÇERİR.'
+          ' \n * Glüten içermez '
+          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
+          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
+          '\n * Geçerlilik : 90 Gün"',
+    );
   }
 }
 

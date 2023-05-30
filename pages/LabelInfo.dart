@@ -3,108 +3,22 @@ import 'package:project/main.dart';
 import 'package:project/pages/SearchPage.dart';
 import 'package:project/pages/FavoriteItemPage.dart';
 import 'package:project/pages/CategoryPage.dart';
+import 'package:project/widgets/LabelInfoWidget.dart';
 
-class LabelInfo extends StatefulWidget {
+class LabelInfo extends StatelessWidget {
   const LabelInfo({Key? key}) : super(key: key);
 
   @override
-  _LabelInfoState createState() => _LabelInfoState();
-}
-
-class _LabelInfoState extends State<LabelInfo> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Etiket Bilgileri'),
+      appBar: AppBar(title: const Text(''),
         centerTitle: true,
-      ),
-      body: Column(
-        children: [
-        SizedBox(
-        height: 15,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
-        Center(
-        child: Text(
-          'KATEGORİ : SÜT VE SÜT ÜRÜNLERİ',
-          style: TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-           ),
-         ),
-       ),
-         SizedBox(
-        height: 15,
-        ),
-      ClipOval(
-        child: Container(
-          alignment: Alignment.topCenter,
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 3.0,
-              color: Colors.blue.shade50,
-            ),
-            borderRadius: BorderRadius.circular(100),
-            color: Colors.blue.withOpacity(0.5),
-            image: DecorationImage(
-              alignment: Alignment.center,
-              image: AssetImage('images/yemek.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-      ),
-      SizedBox(
-        height: 5,
-      ),
-          Center(
-            child: Text(
-              'ITAMBE SÜT',
-              style: TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Center(
-            child: Text(
-              'ETİKET BİLGİLERİ',
-              style: TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Center(
-            child: Container(
-              color: Colors.white,
-              child: Text(
-                '* Tam yağlu süt. '
-                    '\n * LAKTOZ İÇERİR.'
-                ' \n * Glüten içermez '
-                    '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-                    '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-                    '\n * Geçerlilik : 90 Gün',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12.5,
-                ),
-              ),
-            ),
-          ),
-      ],
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
@@ -141,9 +55,98 @@ class _LabelInfoState extends State<LabelInfo> {
           ),
         ),
       ),
+        body: _buildLabelInfo(),
     );
   }
 
+ /*body: Column(
+        children: [
+          SizedBox(
+            height: 15,
+          ),
+          Center(
+            child: Text(
+              'KATEGORİ : SÜT VE SÜT ÜRÜNLERİ',
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          ClipOval(
+            child: Container(
+              alignment: Alignment.topCenter,
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 3.0,
+                  color: Colors.blue.shade50,
+                ),
+                borderRadius: BorderRadius.circular(100),
+                color: Colors.blue.withOpacity(0.5),
+                image: DecorationImage(
+                  alignment: Alignment.center,
+                  image: AssetImage('images/yemek.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Center(
+            child: Text(
+              'ITAMBE SÜT',
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: Text(
+              'ETİKET BİLGİLERİ',
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Center(
+            child: Container(
+              color: Colors.white,
+              child: Text(
+                '* Tam yağlu süt. '
+                    '\n * LAKTOZ İÇERİR.'
+                    ' \n * Glüten içermez '
+                    '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
+                    '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
+                    '\n * Geçerlilik : 90 Gün',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12.5,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),*/
   void _GoHome(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return HomePage(title: '');
@@ -167,6 +170,26 @@ class _LabelInfoState extends State<LabelInfo> {
       return CategoryPage();
     },));
   }
+
+  _buildLabelInfo() {
+    return _Label();
+  }
+
+  _Label() {
+    return LabelInfoWidget(
+    categoryName: "SÜT VE SÜT ÜRÜNLERİ",
+    imageUrl: "",
+    productName: "ITAMBE SÜT",
+    productInfo: "Tam yağlu süt."
+    '\n * LAKTOZ İÇERİR.'
+    ' \n * Glüten içermez '
+    '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
+    '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
+    '\n * Geçerlilik : 90 Gün"',
+    );
+  }
+
+
 }
 
 

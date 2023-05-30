@@ -19,7 +19,7 @@ class ProductList extends StatefulWidget {
 }
 
 class _ProductListState extends State<ProductList> {
-  bool isPressed = false;
+  bool isPressed = true;
 
   @override
   Widget build(BuildContext context) {

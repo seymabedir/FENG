@@ -3,22 +3,63 @@ import 'package:project/main.dart';
 import 'package:project/pages/SearchPage.dart';
 import 'package:project/pages/FavoriteItemPage.dart';
 import 'package:project/pages/CategoryPage.dart';
+import 'package:project/widgets/HealthyConsumptionWidget.dart';
 
-class HealthyConsumption extends StatefulWidget {
+class HealthyConsumption extends StatelessWidget {
   const HealthyConsumption({Key? key}) : super(key: key);
 
   @override
-  _HealthyConsumptionState createState() => _HealthyConsumptionState();
-}
-
-class _HealthyConsumptionState extends State<HealthyConsumption> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sağlıklı Tüketim'),
+      appBar: AppBar(title: const Text(''),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
-      body: Column(
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          color: Colors.lightBlueAccent,
+          height: kToolbarHeight,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home_outlined),
+                onPressed: () {
+                  _GoHome(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  _GoSearch(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.favorite_border_outlined),
+                onPressed: () {
+                  _GoFavItems(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.dataset_outlined),
+                onPressed: () {
+                  _GoCategories(context);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: _buildHealthyConsumption(),
+    );
+  }
+
+  /*body: Column(
         children: [
           SizedBox(
             height: 15,
@@ -74,7 +115,7 @@ class _HealthyConsumptionState extends State<HealthyConsumption> {
           ),
           Center(
             child: Text(
-              'SAĞLIKLI TÜKETİM',
+              'ETİKET BİLGİLERİ',
               style: TextStyle(
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
@@ -104,69 +145,8 @@ class _HealthyConsumptionState extends State<HealthyConsumption> {
               ),
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
-          Center(
-            child: Container(
-              color: Colors.white,
-              child: Text(
-                '* Tam yağlu süt. '
-                    '\n * LAKTOZ İÇERİR.'
-                    ' \n * Glüten içermez '
-                    '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-                    '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-                    '\n * Geçerlilik : 90 Gün',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12.5,
-                ),
-              ),
-            ),
-          ),
         ],
-
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          color: Colors.lightBlueAccent,
-          height: kToolbarHeight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                icon: Icon(Icons.home_outlined),
-                onPressed: () {
-                  _GoHome(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  _GoSearch(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
-                onPressed: () {
-                  _GoFavItems(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.dataset_outlined),
-                onPressed: () {
-                  _GoCategories(context);
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
+      ),*/
   void _GoHome(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return HomePage(title: '');
@@ -189,6 +169,22 @@ class _HealthyConsumptionState extends State<HealthyConsumption> {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return CategoryPage();
     },));
+  }
+
+  _buildHealthyConsumption() {
+    return HealthyConsumptionWidget(
+      categoryName: "SÜT VE SÜT ÜRÜNLERİ",
+      imageUrl: "",
+      productName: "ITAMBE SÜT",
+      productInfo: "xxxxxxxxxxxx."
+          '\n * LAKTOZ İÇERİR.'
+          ' \n * Glüten içermez '
+          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
+          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
+          '\n * Geçerlilik : 90 Gün"',
+      condition: "xxxxxxxxxxxxxxxxxxxxxxxx",
+
+    );
   }
 }
 
