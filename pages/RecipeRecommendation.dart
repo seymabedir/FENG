@@ -3,22 +3,99 @@ import 'package:project/main.dart';
 import 'package:project/pages/SearchPage.dart';
 import 'package:project/pages/FavoriteItemPage.dart';
 import 'package:project/pages/CategoryPage.dart';
+import 'package:project/widgets/RecipeRecWidget.dart';
 
-class RecipeRecommendation extends StatefulWidget {
+class RecipeRecommendation extends StatelessWidget {
   const RecipeRecommendation({Key? key}) : super(key: key);
 
-  @override
-  _RecipeRecommendationState createState() => _RecipeRecommendationState();
-}
-
-class _RecipeRecommendationState extends State<RecipeRecommendation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Önerilen Tarifler'),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
-      body: Column(
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          color: Colors.lightBlueAccent,
+          height: kToolbarHeight,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home_outlined),
+                onPressed: () {
+                  _GoHome(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  _GoSearch(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.favorite_border_outlined),
+                onPressed: () {
+                  _GoFavItems(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.dataset_outlined),
+                onPressed: () {
+                  _GoCategories(context);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: _buildRecipeRecommendation(),
+    );
+  }
+
+
+  _buildRecipeRecommendation() {
+    return RecipeRecWidget(
+        categoryName: "SÜT VE SÜT ÜRÜNLERİ",
+        imageUrl: "",
+        productName: "ITAMBE SÜT",
+        recipes: "SÜTLAÇ",
+        recipeImage: "",
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /*body: Column(
         children: [
           SizedBox(
             height: 15,
@@ -194,44 +271,8 @@ class _RecipeRecommendationState extends State<RecipeRecommendation> {
             ],
           ),
         ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          color: Colors.lightBlueAccent,
-          height: kToolbarHeight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                icon: Icon(Icons.home_outlined),
-                onPressed: () {
-                  _GoHome(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  _GoSearch(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
-                onPressed: () {
-                  _GoFavItems(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.dataset_outlined),
-                onPressed: () {
-                  _GoCategories(context);
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+      ),*/
+
 
   void _GoHome(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
