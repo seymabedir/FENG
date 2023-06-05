@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
-import '../pages/CategoryDetail.dart';
-import 'package:project/utilities/routes.dart';
 
 class CategoryDetailWidget extends StatelessWidget {
   String title;
@@ -69,7 +67,7 @@ class CategoryDetailWidget extends StatelessWidget {
           this.title,
           style: TextStyle(
             fontSize: 25.0,
-            color: Colors.grey,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -79,17 +77,20 @@ class CategoryDetailWidget extends StatelessWidget {
 
   _buildCategoryImage() {
     return Container(
-      child: Image.network(this.imageUrl),
+      //child: Image.network(this.imageUrl),
       alignment: Alignment.topCenter,
       width: 200,
-      height: 150,
+      height: 155,
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: NetworkImage(this.imageUrl),
+          fit: BoxFit.cover,
+        ),
         border: Border.all(
           width: 5.0,
-          color: Colors.black,
+          color: Colors.white,
         ),
-        borderRadius: BorderRadius.circular(15),
-        color: Colors.blue.withOpacity(0.5),
       ),
     );
   }
@@ -99,10 +100,9 @@ class CategoryDetailWidget extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           width: 5.0,
-          color: Colors.black,
+          color: Colors.white,
         ),
         borderRadius: BorderRadius.circular(15),
-        color: Colors.white,
       ),
       width: 300,
       height: 150,
@@ -134,19 +134,19 @@ class CategoryDetailWidget extends StatelessWidget {
             width: 80,
             height: 80,
             decoration: BoxDecoration(
-              border: Border.all(
-                width: 2.0,
-                color: Colors.white,
-              ),
               borderRadius: BorderRadius.circular(15),
               color: Colors.blue.withOpacity(0.5),
             ),
             child: Stack(
               children: [
                 Container(
-                  child: Image.network(this.imageUrl),
-                  width: 120,
-                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                      image: NetworkImage(this.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
@@ -159,15 +159,14 @@ class CategoryDetailWidget extends StatelessWidget {
                         width: 5.0,
                         color: Colors.white,
                       ),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(13),
                     ),
                     child: Center(
                       child: Text(
                         this.products,
                         style: TextStyle(
-                          fontSize: 6,
+                          fontSize: 20,
                           color: Colors.black,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

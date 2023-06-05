@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/pages/AccountInfoPage.dart';
-import 'package:project/pages/BoardPage.dart';
-import 'package:project/pages/CategoryPage.dart';
-import 'package:project/pages/CluePage.dart';
-import 'package:project/pages/ContactPage.dart';
-import 'package:project/pages/FavCluesPage.dart';
-import 'package:project/pages/FavRecipesPage.dart';
-import 'package:project/pages/FavSuggestionsPage.dart';
-import 'package:project/pages/FavoriteItemPage.dart';
-import 'package:project/pages/HelpPage.dart';
-import 'package:project/pages/RecipePage.dart';
-import 'package:project/pages/SearchPage.dart';
-import 'package:project/pages/SettingsPage.dart';
-import 'package:project/pages/SuggestionPage.dart';
+import 'package:project/utilities/constants.dart';
 import 'package:project/utilities/routes.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Smart Eat',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,//white
+        primarySwatch: Colors.lightBlue, //white
       ),
       home: const HomePage(title: ''),
       routes: Routes.routes,
@@ -44,8 +30,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Color.fromRGBO(150, 210, 250, 1),
+      backgroundColor: Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
-        //backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(200, 235, 254, 10),
         actions: [
           Builder(builder: (context) {
             return IconButton(
@@ -58,35 +46,36 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Colors.lightBlueAccent,
+          color: Color.fromRGBO(200, 235, 254, 10),
           height: kToolbarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined,
+                icon: Icon(
+                  Icons.home_outlined,
                   color: Colors.grey,
                 ),
                 onPressed: () {
-                  _GoHome(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {
-                  _GoSearch(context);
-               },
+                  Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
+                },
               ),
               IconButton(
                 icon: Icon(Icons.favorite_border_outlined),
                 onPressed: () {
-                  _GoFavItems(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.dataset_outlined),
                 onPressed: () {
-                  _GoCategories(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
             ],
@@ -95,409 +84,374 @@ class HomePage extends StatelessWidget {
       ),
 
       endDrawer: Drawer(
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.white60,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.white10,//color.cyan.shade50
+                color: Colors.white10,
               ),
-              child: Align(
-              alignment: Alignment.center,
-              child: Text(' PROFİL'),
-            ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white60,
-                border: Border.all(
-                    color: Colors.white60,
-                    width: 2.0,
-                    style: BorderStyle.solid
+              child: Center(
+                child: ListTile(
+                  leading: Icon(Icons.account_circle,
+                      color: Colors.black54,
+                  size: 50,
+                  ),
+                  title: const Text('PROFİL',
+                  style: TextStyle(fontSize: 25.0, color: Colors.black54,),
+                  ),
                 ),
               ),
-        child:ListTile(
-              leading:
-              Icon(
-                  Icons.account_circle_outlined,
-                  color: Colors.black87
-              ),
-              title: const Text('Hesap Bilgileri'),
-              onTap: () {
-                _GoAccountInfo(context);
-              },
             ),
-           ),
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.white60,
-          border: Border.all(
-              color: Colors.white60,
-              width: 2.0,
-              style: BorderStyle.solid
-          ),
-        ),
-        child:ListTile(
-              leading: Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.black87
-              ),
-              title: const Text('Favori İpuçları'),
-              onTap: () {
-                _GoFavClues(context);
-              },
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 60.0,
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: Icon(Icons.account_circle_outlined,
+                        color: Colors.black87),
+                    title: const Text('Hesap Bilgileri'),
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(Constants.ROUTE_ACCOUNTINFO);
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  height: 60.0,
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: Icon(Icons.favorite_border_outlined,
+                        color: Colors.black87),
+                    title: const Text('Favori İpuçları'),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(Constants.ROUTE_FAVCLUE);
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  height: 60.0,
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: Icon(Icons.favorite_border_outlined,
+                        color: Colors.black87),
+                    title: const Text('Favori Yemek Önerileri'),
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(Constants.ROUTE_FAVSUGGESTIONS);
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  height: 60.0,
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: Icon(Icons.favorite_border_outlined,
+                        color: Colors.black87),
+                    title: const Text('Favori Tarifler'),
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(Constants.ROUTE_FAVRECIPES);
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  height: 60.0,
+                  color: Colors.white,
+                  child: ListTile(
+                    leading:
+                        Icon(Icons.view_stream_outlined, color: Colors.black87),
+                    title: const Text('Dolap'),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(Constants.ROUTE_BOARD);
+                    },
+                  ),
+                ),
+              ],
             ),
-          ),
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.white60,
-          border: Border.all(
-              color: Colors.white60,
-              width: 2.0,
-              style: BorderStyle.solid
-          ),
-        ),
-        child:ListTile(
-              leading: Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.black87
-              ),
-              title: const Text('Favori Yemek Önerileri'),
-              onTap: () {
-                _GoFavSuggestions(context);
-              },
-            ),
-           ),
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.white60,
-          border: Border.all(
-              color: Colors.white60,
-              width: 2.0,
-              style: BorderStyle.solid
-          ),
-        ),
-        child:ListTile(
-              leading: Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.black87
-              ),
-              title: const Text('Favori Tarifler'),
-              onTap: () {
-                _GoFavRecipes(context);
-              },
-            ),
-           ),
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.white60,
-          border: Border.all(
-              color: Colors.white60,
-              width: 2.0,
-              style: BorderStyle.solid
-          ),
-        ),
-        child:ListTile(
-              leading: Icon(
-                  Icons.view_stream_outlined,
-                  color: Colors.black87
-              ),
-              title: const Text('Dolap'),
-              onTap: () {
-                _GoBoard(context);
-              },
-            ),
-           ),
           ],
         ),
       ),
 
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            TextButton(
-              onPressed: () {
-                _GoClues(context);
-              },
-              child: Container(
-                width: 300,
-                height: 150,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      width: 2.0,
-                      color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
-                    image: AssetImage('images/yemek.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    'İPUÇLARI',
-                    style: TextStyle(fontSize: 16, color: Colors.white,fontWeight: FontWeight.bold,),
-                  ),
-                ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SizedBox(
+                height: 10.0,
               ),
-            ),
-            TextButton(
-              onPressed: () {
-                _GoSuggestions(context);
-              },
-              child: Container(
-                width: 300,
-                height: 100,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 3.0,
-                    color: Colors.blue,
+               Container(
+                 width: 300,
+                 child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(Constants.ROUTE_CLUE_PAGE);
+                  },
+                  child: Center(
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: 300,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                              image: AssetImage('images/yemek.jpg'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.white30,
+                            ),
+                          ),
+                    ),
+
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '\n İPUÇLARI',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
-                    image: AssetImage('images/yemek.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    'ÖNERİLER',
-                    style: TextStyle(fontSize: 16, color: Colors.white,fontWeight: FontWeight.bold,),
-                  ),
-                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Container(
-                alignment: Alignment.center,
-                width: 300,
-                height: 230,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 4.0,
-                    color: Colors.blue,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextButton( //******* son iki item için 1. ********
-                      onPressed: () {
-                        //_GoClues(context);
-                      },
-                      child: Container(
-                        alignment: Alignment.bottomCenter,
-                        width: 120,
-                        height: 150,
+               ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Constants.ROUTE_SUGGESTION_PAGE);
+                  //basıldığında o günün yemek önerisi ne ise ona gitsin
+                },
+                child: Container(
+                        width: 300,
+                        height: 100,
                         decoration: BoxDecoration(
                           border: Border.all(
-                            width: 4.0,
-                            color: Colors.indigo,
+                            width: 3.0,
+                            color: Colors.blue,
                           ),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            topRight: Radius.circular(20.0),
-                          ),
-                          color: Colors.blue.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
                             image: AssetImage('images/yemek.jpg'),
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Align(
+                       child: Align(
                           alignment: Alignment.topCenter,
                           child: Text(
-                            'SON GÖRÜNTÜLENEN ITEM 1',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 10, color: Colors.white,fontWeight: FontWeight.bold,),
+                            '\n ÖNERİLER',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                    TextButton( //******* son iki item için 2. ********
-                      onPressed: () {
-                        //_GoClues(context);
-                      },
-                      child: Container(
-                        alignment: Alignment.bottomCenter,
-                        width: 120,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 4.0,
-                            color: Colors.indigo,
-                          ),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            topRight: Radius.circular(20.0),
-                          ),
-                          color: Colors.blue.withOpacity(0.5),
-                          image: DecorationImage(
-                            image: AssetImage('images/yemek.jpg'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Text(
-                            'SON GÖRÜNTÜLENEN ITEM 2',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 10, color: Colors.white,fontWeight: FontWeight.bold,),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
-            ),
-          ],
-        ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 300,
+                  height: 230,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 4.0,
+                      color: Colors.blue,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromRGBO(200, 235, 254, 10),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 200,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color:
+                              Colors.white, //Color.fromRGBO(232, 234, 246, 100),
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'SON GÖRÜNTÜLENENLER',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(26, 35, 126, 10),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextButton(
+                            //******* son iki item için 1. ********
+                            onPressed: () {
+                              //_GoClues(context);
+                            },
+                            child: Container(
+                              alignment: Alignment.bottomCenter,
+                              width: 100,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 4.0,
+                                  color: Color.fromRGBO(26, 35, 126, 10),
+                                ),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(40.0),
+                                  topRight: Radius.circular(40.0),
+                                ),
+                                color: Colors.blue.withOpacity(0.5),
+                                image: DecorationImage(
+                                  image: AssetImage('images/yemek.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            //******* son iki item için 2. ********
+                            onPressed: () {
+                              //_GoClues(context);
+                            },
+                            child: Container(
+                              alignment: Alignment.bottomCenter,
+                              width: 100,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 4.0,
+                                  color: Color.fromRGBO(26, 35, 126, 10),
+                                ),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(40.0),
+                                  topRight: Radius.circular(40.0),
+                                ),
+                                color: Colors.blue.withOpacity(0.5),
+                                image: DecorationImage(
+                                  image: AssetImage('images/yemek.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
       ),
       drawer: Drawer(
+        backgroundColor: Colors.white60,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.lightBlueAccent,
+                color: Colors.white10,
               ),
-                child: const Align(
-                 alignment: Alignment.center,
-                child: Text('MENÜ'),
+              child: Center(
+                child: ListTile(
+                  leading: Icon(Icons.density_medium_sharp,
+                    color: Colors.black54,
+                    size: 30,
+                  ),
+                  title: const Text('MENÜ',
+                    style: TextStyle(fontSize: 25.0, color: Colors.black54,),
+                  ),
                 ),
-            ),
-            ListTile(
-              leading: Icon(
-                  Icons.settings,
-                  color: Colors.black87
               ),
-              title: const Text('Ayarlar'),
-              onTap: () {
-                _GoSettings(context);
-              },
             ),
-            ListTile(
-              leading: Icon(
-                  Icons.help,
-                  color: Colors.black87
-              ),
-              title: const Text('Yardım'),
-              onTap: () {
-                _GoHelp(context);
-              },
+            SizedBox(
+              height: 5.0,
             ),
-            ListTile(
-              leading: Icon(
-                  Icons.message_outlined,
-                  color: Colors.black87
+            Container(
+              height: 60.0,
+              color: Colors.white,
+              child: ListTile(
+                leading: Icon(Icons.settings, color: Colors.black87),
+                title: const Text('Ayarlar'),
+                onTap: () {
+                  Navigator.of(context).pushNamed(Constants.ROUTE_SETTINGS);
+                },
               ),
-              title: const Text('İletişim'),
-              onTap: () {
-                _GoContact(context);
-              },
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Container(
+              height: 60.0,
+              color: Colors.white,
+              child: ListTile(
+                leading: Icon(Icons.help, color: Colors.black87),
+                title: const Text('Yardım'),
+                onTap: () {
+                  Navigator.of(context).pushNamed(Constants.ROUTE_HELP);
+                },
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Container(
+              height: 60.0,
+              color: Colors.white,
+              child: ListTile(
+                leading: Icon(Icons.message_outlined, color: Colors.black87),
+                title: const Text('İletişim'),
+                onTap: () {
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CONTACT);
+                },
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Container(
+              height: 60.0,
+              color: Colors.white,
+              child: ListTile(
+                leading: Icon(Icons.description_sharp, color: Colors.black87),
+                title: const Text('Referanslar'),
+                onTap: () {
+                  Navigator.of(context).pushNamed(Constants.ROUTE_REFERENCES);
+                },
+              ),
             ),
           ],
         ),
       ),
     );
-  }
-
-
-  void _GoRecipes(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return RecipePage();
-    },));
-  }
-
-  void _GoClues(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return CluePage();
-    },));
-  }
-
-  void _GoSuggestions(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return SuggestionPage();
-    },));
-  }
-
-  void _GoHome(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return HomePage(title: '');
-    },));
-  }
-
-  void _GoSearch(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return SearchPage();
-    },));
-  }
-
-  void _GoFavItems(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavoriteItemPage();
-    },));
-  }
-
-  void _GoCategories(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return CategoryPage();
-    },));
-  }
-
-  void _GoSettings(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return SettingsPage();
-    },));
-  }
-
-  void _GoHelp(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return HelpPage();
-    },));
-  }
-
-  void _GoContact(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return ContactPage();
-    },));
-  }
-
-  void _GoAccountInfo(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return AccountInfoPage();
-    },));
-  }
-
-  void _GoFavClues(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavCluesPage();
-    },));
-  }
-
-  void _GoFavSuggestions(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavSuggestionsPage();
-    },));
-  }
-
-  void _GoFavRecipes(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavRecipesPage();
-    },));
-  }
-
-  void _GoBoard(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return BoardPage();
-    },));
   }
 }

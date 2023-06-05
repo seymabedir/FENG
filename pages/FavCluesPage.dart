@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/main.dart';
-import 'package:project/pages/SearchPage.dart';
-import 'package:project/pages/FavoriteItemPage.dart';
-import 'package:project/pages/CategoryPage.dart';
+import 'package:project/utilities/constants.dart';
 
 class FavCluesPage extends StatefulWidget {
   const FavCluesPage({Key? key}) : super(key: key);
@@ -15,39 +12,52 @@ class _FavCluesPageState extends State<FavCluesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Favori İpuçları')),
+      backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+        title: const Text('Favori İpuçları'),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Container(
 
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Colors.lightBlueAccent,
+          color: Color.fromRGBO(200, 235, 254, 10),
           height: kToolbarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined),
+                icon: Icon(Icons.home_outlined,
+                  color: Colors.black,
+                ),
                 onPressed: () {
-                  _GoHome(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {
-                  _GoSearch(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.favorite_border_outlined),
                 onPressed: () {
-                  _GoFavItems(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.dataset_outlined),
                 onPressed: () {
-                  _GoCategories(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
             ],
@@ -57,29 +67,6 @@ class _FavCluesPageState extends State<FavCluesPage> {
     );
   }
 
-  void _GoHome(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return HomePage(title: '');
-    },));
-  }
-
-  void _GoSearch(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return SearchPage();
-    },));
-  }
-
-  void _GoFavItems(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavoriteItemPage();
-    },));
-  }
-
-  void _GoCategories(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return CategoryPage();
-    },));
-  }
 }
 
 

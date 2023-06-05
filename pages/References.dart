@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-class ContactPage extends StatefulWidget {
-  const ContactPage({Key? key}) : super(key: key);
+class References extends StatefulWidget {
+  const References({Key? key}) : super(key: key);
 
   @override
-  _ContactPageState createState() => _ContactPageState();
+  _ReferencesState createState() => _ReferencesState();
 }
 
-class _ContactPageState extends State<ContactPage> {
+class _ReferencesState extends State<References> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(200, 235, 254, 10),
-        title: const Text('İLETİŞİM'),
+        title: const Text('REFERANSLAR'),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.chevron_left),

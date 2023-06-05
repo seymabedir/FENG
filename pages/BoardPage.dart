@@ -1,85 +1,92 @@
 import 'package:flutter/material.dart';
-import 'package:project/main.dart';
-import 'package:project/pages/SearchPage.dart';
-import 'package:project/pages/FavoriteItemPage.dart';
-import 'package:project/pages/CategoryPage.dart';
+import 'package:project/utilities/constants.dart';
+import 'package:project/widgets/BoardWidget.dart';
 
-class BoardPage extends StatefulWidget {
+class BoardPage extends StatelessWidget {
   const BoardPage({Key? key}) : super(key: key);
 
   @override
-  _BoardPageState createState() => _BoardPageState();
-}
-
-class _BoardPageState extends State<BoardPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('DOLAP')),
-      body: Container(
-
+      backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+          title: const Text('DOLAP'),
+          centerTitle: true,
+          leading: IconButton(
+            icon: Icon(Icons.chevron_left),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Colors.lightBlueAccent,
+          color: Color.fromRGBO(200, 235, 254, 10),
           height: kToolbarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined),
+                icon: Icon(Icons.home_outlined,
+                  color: Colors.black,
+                ),
                 onPressed: () {
-                  _GoHome(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {
-                  _GoSearch(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.favorite_border_outlined),
                 onPressed: () {
-                  _GoFavItems(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.dataset_outlined),
                 onPressed: () {
-                  _GoCategories(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
             ],
           ),
         ),
       ),
+      body: _buildBoard(),
     );
   }
 
-  void _GoHome(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return HomePage(title: '');
-    },));
+  _buildBoard() {
+    return Container(
+      child: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (context,index){
+          if (index == 0) {
+            return SizedBox(height: 15.0 , width: 10.0,);
+          } else if (index == 4) {
+            return SizedBox(height: 5.0 , width: 10.0,);
+          } else {
+            return _buildShelf();
+          }
+        },
+      ),
+    );
   }
 
-  void _GoSearch(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return SearchPage();
-    },));
+  _buildShelf() {
+    return BoardWidget(
+      imageUrl: 'https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg',
+      expiryDate: DateTime(2023, 10, 06),
+      openDate: DateTime(2023, 06, 06),
+      consumeDays: 3,
+    );
   }
 
-  void _GoFavItems(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavoriteItemPage();
-    },));
-  }
-
-  void _GoCategories(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return CategoryPage();
-    },));
-  }
 }
 
 

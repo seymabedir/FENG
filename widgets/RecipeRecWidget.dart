@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project/pages/RecipeRecommendation.dart';
 import 'package:project/utilities/constants.dart';
-import 'package:project/utilities/routes.dart';
 
 class RecipeRecWidget extends StatelessWidget {
+
   String categoryName;
   String imageUrl;
   String productName;
@@ -31,16 +30,53 @@ class RecipeRecWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         SizedBox(
-            height: 10.0
+            height: 5.0
         ),
         _buildCategoryName(context),
         _buildProductImage(context),
         _buildProductName(context),
-        Text(
-          'ÖNERİLEN TARİFLER',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0,),
+        SizedBox(
+            height: 5.0
         ),
-        _buildRecipeList(context),
+        Center(
+          child: Container(
+            width: 175,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.white60,
+            ),
+            child: Text(
+              'ÖNERİLEN TARİFLER',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,),
+            ),
+          ),
+        ),
+        SizedBox(
+            height: 5.0
+        ),
+        Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children : [
+            _buildRecipeList(context),
+            _buildRecipeList(context),
+    ],
+          ),
+        ),
+        Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _buildRecipeList(context),
+              _buildSendRecipeButton(context),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -48,12 +84,22 @@ class RecipeRecWidget extends StatelessWidget {
 
   _buildCategoryName(BuildContext context) {
     return Center(
-      child: Text(
-        this.categoryName,
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
+      child: Container(
+        width: 250,
+        height: 40,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white60,
+        ),
+        child: Center(
+          child: Text(
+            this.categoryName,
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
         ),
       ),
     );
@@ -62,17 +108,19 @@ class RecipeRecWidget extends StatelessWidget {
   _buildProductImage(BuildContext context) {
     return ClipOval(
       child: Container(
-        child: Image.network(this.imageUrl),
         alignment: Alignment.topCenter,
-        width: 100,
-        height: 100,
+        width: 80,
+        height: 80,
         decoration: BoxDecoration(
           border: Border.all(
             width: 3.0,
-            color: Colors.blue.shade50,
+            color: Color.fromRGBO(13, 71, 161, 10),
           ),
           borderRadius: BorderRadius.circular(100),
-          color: Colors.blue.withOpacity(0.5),
+          image: DecorationImage(
+            image: NetworkImage(this.imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
@@ -80,12 +128,22 @@ class RecipeRecWidget extends StatelessWidget {
 
   _buildProductName(BuildContext context) {
     return Center(
-      child: Text(
-        this.productName,
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
-          fontSize: 12,
+      child: Container(
+        width: 100,
+        height: 20,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white60,
+        ),
+        child: Center(
+          child: Text(
+            this.productName,
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
         ),
       ),
     );
@@ -94,34 +152,89 @@ class RecipeRecWidget extends StatelessWidget {
   _buildRecipeList(BuildContext context) {
     return Column(
       children: [
-        Center(
-          child: InkWell(
-            //onTap: ,
-            child: ClipOval(
-              child: Container(
-                child: Image.network(this.recipeImage),
-                alignment: Alignment.topCenter,
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 5,
-                    color: Colors.lightBlueAccent.shade100,
-                  ),
-                  borderRadius: BorderRadius.circular(100),
+        ClipOval(
+          child: TextButton(
+            onPressed: () {
+            },
+            child: Container(
+              alignment: Alignment.topCenter,
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 3.0,
+                  color: Color.fromRGBO(13, 71, 161, 80),
                 ),
+                borderRadius: BorderRadius.circular(100),
+                image: DecorationImage(
+                  image: NetworkImage(this.imageUrl),
+                  fit: BoxFit.cover,
+                ),
+                color: Colors.white70,
               ),
             ),
           ),
         ),
-        SizedBox(
-          height: 2.0,
-        ),
-        Text(
-          this.recipes,
-          style: TextStyle(fontSize: 16.0,),
+        Container(
+          width: 80,
+          height: 40,
+          decoration: BoxDecoration(
+            color: Colors.white60,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Center(
+            child: Text('SÜTLAÇ',
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
       ],
+    );
+  }
+
+  _buildSendRecipeButton(BuildContext context) {
+    return Column(
+      children: [
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(Constants.ROUTE_SEND_RECIPE);
+          },
+          child: ClipOval(
+            child: Container(
+              child: Center(
+                child: Text('+',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 25.0,),
+                ),
+              ),
+              alignment: Alignment.topCenter,
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 5,
+                  color: Colors.lightBlueAccent.shade100,
+                ),
+                borderRadius: BorderRadius.circular(100),
+              ),
+            ),
+    ),
+    ),
+          Container(
+            width: 100,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.white60,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: Text('Tarifinizi Bizimle Paylaşmak İster Misiniz?',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 12,),
+              ),
+            ),
+          ),
+    ],
     );
   }
 

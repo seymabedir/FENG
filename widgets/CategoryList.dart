@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
-import '../pages/CategoryDetail.dart';
-import 'package:project/utilities/routes.dart';
 
 class CategoryList extends StatelessWidget {
   String title;
   String imageUrl;
-  //String info;
-  //List<String> products;
 
-  CategoryList(
-      {required this.title,
-      required this.imageUrl,
-     // required this.info,
-      //required this.products
-     });
+  CategoryList({
+    required this.title,
+    required this.imageUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        _buildCategoryCard(context),
-        _buildCategoryCard(context),
-      ],
+    return Center(
+      child: Row(
+        children: <Widget>[
+          _buildCategoryCard(context),
+          _buildCategoryCard(context),
+        ],
+      ),
     );
   }
 
@@ -32,27 +28,24 @@ class CategoryList extends StatelessWidget {
         Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY_DETAIL);
         //_GoCategory1(context);
       },
-      child:
-          Padding(
-            padding: const EdgeInsets.only(left: 45.0,),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    width: 10,
-                    height: 10,
-                  ),
-        Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  width: 10,
-                  height: 10,
-                ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0
+            //left: 45.0,
+            ),
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          SizedBox(
+            width: 10,
+            height: 10,
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            SizedBox(
+              width: 30,
+            ),
             Container(
               alignment: Alignment.bottomCenter,
-              width: 120,
-              height: 150,
+              width: 150,
+              height: 170,
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 2.0,
@@ -64,14 +57,18 @@ class CategoryList extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
-                    child: Image.network(this.imageUrl),
-                    width: 120,
-                    height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: NetworkImage(this.imageUrl),
+                          fit: BoxFit.cover,
+                        ),
+                    ),
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
-                      width: 120,
+                      width: 150,
                       height: 50,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -79,13 +76,13 @@ class CategoryList extends StatelessWidget {
                           width: 5.0,
                           color: Colors.white,
                         ),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(13),
                       ),
                       child: Center(
                         child: Text(
                           this.title,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 13,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
@@ -96,15 +93,9 @@ class CategoryList extends StatelessWidget {
                 ],
               ),
             ),
+          ]),
         ]),
-      ]),
-          ),
+      ),
     );
   }
-
-  /*void _GoCategory1(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return Category1();
-    },));
-  }*/
 }

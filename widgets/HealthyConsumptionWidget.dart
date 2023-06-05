@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/utilities/constants.dart';
-import 'package:project/pages/LabelInfo.dart';
-import 'package:project/utilities/routes.dart';
 
 class HealthyConsumptionWidget extends StatelessWidget {
   String categoryName;
@@ -30,14 +27,34 @@ class HealthyConsumptionWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         SizedBox(
-            height: 10.0
+            height: 5.0
         ),
         _buildCategoryName(context),
         _buildProductImage(context),
         _buildProductName(context),
-        Text(
-          'SAĞLIKLI TÜKETİM',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0,),
+        SizedBox(
+            height: 5.0
+        ),
+        Center(
+          child: Container(
+            width: 150,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.white60,
+            ),
+            child: Text(
+              'SAĞLIKLI TÜKETİM',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,),
+            ),
+          ),
+        ),
+        SizedBox(
+            height: 5.0
         ),
         _buildHealConsInfo(context),
         _buildConditions(context),
@@ -48,12 +65,22 @@ class HealthyConsumptionWidget extends StatelessWidget {
 
   _buildCategoryName(BuildContext context) {
     return Center(
-      child: Text(
-        this.categoryName,
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
+      child: Container(
+        width: 250,
+        height: 40,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white60,
+        ),
+        child: Center(
+          child: Text(
+            this.categoryName,
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
         ),
       ),
     );
@@ -62,17 +89,19 @@ class HealthyConsumptionWidget extends StatelessWidget {
   _buildProductImage(BuildContext context) {
     return ClipOval(
       child: Container(
-        child: Image.network(this.imageUrl),
         alignment: Alignment.topCenter,
         width: 100,
         height: 100,
         decoration: BoxDecoration(
           border: Border.all(
             width: 3.0,
-            color: Colors.blue.shade50,
+            color: Color.fromRGBO(13, 71, 161, 10),
           ),
           borderRadius: BorderRadius.circular(100),
-          color: Colors.blue.withOpacity(0.5),
+          image: DecorationImage(
+            image: NetworkImage(this.imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
@@ -80,47 +109,79 @@ class HealthyConsumptionWidget extends StatelessWidget {
 
   _buildProductName(BuildContext context) {
     return Center(
-      child: Text(
-        this.productName,
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
-          fontSize: 12,
+      child: Container(
+        width: 100,
+        height: 20,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white60,
+        ),
+        child: Center(
+          child: Text(
+            this.productName,
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
         ),
       ),
     );
   }
 
   _buildHealConsInfo(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.white,
-        child: Text(
-          this.productInfo,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 12.5,
-          ),
-        ),
+    return SingleChildScrollView(
+      child: Center(
+          child: Container(
+            width: 250,
+            height: 150,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 3.0,
+                color: Color.fromRGBO(13, 71, 161, 10),
+              ),
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.white,
+            ),
+            child: Text(
+              this.productInfo,
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 12.5,
+              ),
+            ),
+          )
       ),
     );
   }
 
   _buildConditions(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.white,
-        child: Text(
-          this.condition,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 12.5,
-          ),
-        ),
+    return SingleChildScrollView(
+      child: Center(
+          child: Container(
+            width: 250,
+            height: 150,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 3.0,
+                color: Color.fromRGBO(13, 71, 161, 10),
+              ),
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.white,
+            ),
+            child: Text(
+              this.condition,
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 12.5,
+              ),
+            ),
+          )
       ),
     );
   }

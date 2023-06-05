@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/main.dart';
-import 'package:project/pages/SearchPage.dart';
-import 'package:project/pages/FavoriteItemPage.dart';
-import 'package:project/pages/CategoryPage.dart';
+import 'package:project/utilities/constants.dart';
 import 'package:project/widgets/HealthyConsumptionWidget.dart';
 
 class HealthyConsumption extends StatelessWidget {
@@ -11,7 +8,10 @@ class HealthyConsumption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(''),
+      backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+        title: const Text(''),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.chevron_left),
@@ -22,33 +22,35 @@ class HealthyConsumption extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Colors.lightBlueAccent,
+          color: Color.fromRGBO(200, 235, 254, 10),
           height: kToolbarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined),
+                icon: Icon(Icons.home_outlined,
+                  color: Colors.grey,
+                ),
                 onPressed: () {
-                  _GoHome(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {
-                  _GoSearch(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.favorite_border_outlined),
                 onPressed: () {
-                  _GoFavItems(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
               IconButton(
                 icon: Icon(Icons.dataset_outlined),
                 onPressed: () {
-                  _GoCategories(context);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
             ],
@@ -147,34 +149,12 @@ class HealthyConsumption extends StatelessWidget {
           ),
         ],
       ),*/
-  void _GoHome(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return HomePage(title: '');
-    },));
-  }
 
-  void _GoSearch(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return SearchPage();
-    },));
-  }
-
-  void _GoFavItems(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return FavoriteItemPage();
-    },));
-  }
-
-  void _GoCategories(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return CategoryPage();
-    },));
-  }
 
   _buildHealthyConsumption() {
     return HealthyConsumptionWidget(
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "",
+      imageUrl: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
       productName: "ITAMBE SÜT",
       productInfo: "xxxxxxxxxxxx."
           '\n * LAKTOZ İÇERİR.'
@@ -182,7 +162,12 @@ class HealthyConsumption extends StatelessWidget {
           '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
           '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
           '\n * Geçerlilik : 90 Gün"',
-      condition: "xxxxxxxxxxxxxxxxxxxxxxxx",
+      condition: "xxxxxxxxxxxx."
+          '\n * LAKTOZ İÇERİR.'
+          ' \n * Glüten içermez '
+          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
+          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
+          '\n * Geçerlilik : 90 Gün"',
 
     );
   }

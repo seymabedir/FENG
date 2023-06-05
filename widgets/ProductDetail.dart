@@ -6,7 +6,7 @@ class ProductDetail extends StatefulWidget {
   String categoryName;
   String productName;
   String imageUrl;
-  String avgRate;
+  int avgRate;
   //bool isFav;
   //bool isReported;
 
@@ -25,7 +25,7 @@ class ProductDetail extends StatefulWidget {
 }
 
 class _ProductDetailState extends State<ProductDetail> {
-  bool isFav = false;
+  bool isFav = true;
 
 
 
@@ -34,12 +34,24 @@ class _ProductDetailState extends State<ProductDetail> {
     return Column(
       children: <Widget>[
         SizedBox(
-          height: 15,
+          height: 10,
         ),
         _buildCategoryTitle(context),
+        SizedBox(
+          height: 10,
+        ),
         _buildProductTitle(context),
+        SizedBox(
+          height: 10,
+        ),
         _buildProductImage(context),
+        SizedBox(
+          height: 15,
+        ),
         _buildEvaluation(context),
+        SizedBox(
+          height: 30,
+        ),
         _buildButtons(context),
       ],
     );
@@ -47,12 +59,22 @@ class _ProductDetailState extends State<ProductDetail> {
 
   _buildCategoryTitle(BuildContext context) {
     return Center(
-      child: Text(
-        this.widget.categoryName,
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
+      child: Container(
+        width: 250,
+        height: 40,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white60,
+        ),
+        child: Center(
+          child: Text(
+            this.widget.categoryName,
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
         ),
       ),
     );
@@ -60,12 +82,22 @@ class _ProductDetailState extends State<ProductDetail> {
 
   _buildProductTitle(BuildContext context) {
     return Center(
-      child: Text(
-        this.widget.productName,
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
+      child: Container(
+        width: 100,
+        height: 30,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white60,
+        ),
+        child: Center(
+          child: Text(
+            this.widget.productName,
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
     );
@@ -74,17 +106,19 @@ class _ProductDetailState extends State<ProductDetail> {
   _buildProductImage(BuildContext context) {
     return ClipOval(
       child: Container(
-        child: Image.network(this.widget.imageUrl),
         alignment: Alignment.topCenter,
         width: 150,
         height: 150,
         decoration: BoxDecoration(
           border: Border.all(
             width: 5.0,
-            color: Colors.blue.shade50,
+            color: Color.fromRGBO(13, 71, 161, 10),
           ),
           borderRadius: BorderRadius.circular(100),
-          color: Colors.blue.withOpacity(0.5),
+          image: DecorationImage(
+            image: NetworkImage(this.widget.imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
@@ -94,125 +128,135 @@ class _ProductDetailState extends State<ProductDetail> {
     return Row(
       children: [
         Container(
-          width: 150,
+          width: 170,
           height: 40,
-          decoration: const BoxDecoration(
-            color: Colors.grey,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 3.0,
+              color: Color.fromRGBO(13, 71, 161, 80),
+            ),
+            color: Colors.white30,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(20.0),
               bottomRight: Radius.circular(20.0),
             ),
           ),
-          child: Row(  //yıldızlar
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.star,
-                        color: Colors.yellow,
+          child: Center(
+            child: Row(  //yıldızlar
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Container(
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                        ),
+                        onPressed: () {
+                          //_GoCategories(context);
+                        },
                       ),
-                      onPressed: () {
-                        //_GoCategories(context);
-                      },
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.star,
-                        color: Colors.yellow,
+                  Expanded(
+                    child: Container(
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                        ),
+                        onPressed: () {
+                          //_GoCategories(context);
+                        },
                       ),
-                      onPressed: () {
-                        //_GoCategories(context);
-                      },
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.star,
-                        color: Colors.yellow,
+                  Expanded(
+                    child: Container(
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                        ),
+                        onPressed: () {
+                          //_GoCategories(context);
+                        },
                       ),
-                      onPressed: () {
-                        //_GoCategories(context);
-                      },
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.star_border_outlined,
-                        //color: Colors.yellow,
+                  Expanded(
+                    child: Container(
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.star_border_outlined,
+                          //color: Colors.yellow,
+                        ),
+                        onPressed: () {
+                          //_GoCategories(context);
+                        },
                       ),
-                      onPressed: () {
-                        //_GoCategories(context);
-                      },
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.star_border_outlined,
-                        //color: Colors.yellow,
+                  Expanded(
+                    child: Container(
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.star_border_outlined,
+                          //color: Colors.yellow,
+                        ),
+                        onPressed: () {
+                          //_GoCategories(context);
+                        },
                       ),
-                      onPressed: () {
-                        //_GoCategories(context);
-                      },
                     ),
                   ),
-                ),
-              ]),
-        ),
-        SizedBox(
-          width: 5,
+                ]),
+          ),
         ),
         Container(
           height: 40,
           width: 40,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.white30,
             borderRadius: BorderRadius.circular(15),
           ),
           child: Center(
-            child: Text(
-              this.widget.avgRate,
+            child: Text('${widget.avgRate}',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
         ),
         SizedBox(
           //height: 85,
-          width: 175,
+          width: 130,
         ),
         Column(
           children: [
             Container(
               alignment: Alignment.centerRight,
-              width: 40,
-              //height: 40,
-              decoration: const BoxDecoration(
-                color: Colors.grey,
+              width: 70,
+              height: 40,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 3.0,
+                  color: Color.fromRGBO(13, 71, 161, 80),
+                ),
+                color: Colors.white30,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   bottomLeft: Radius.circular(20.0),
                 ),
               ),
-              child: IconButton(
-                icon: Icon(
-                  isFav ? Icons.favorite_border_outlined : Icons.favorite,
-                  color: isFav ? Colors.black : Colors.red,
+              child: Center(
+                child: IconButton(
+                  icon: Icon(
+                    isFav ? Icons.favorite_border_outlined : Icons.favorite,
+                    color: isFav ? Colors.black : Colors.red,
+                    size: 25,
+                  ),
+
+                  onPressed: toggleIcon,
                 ),
-                onPressed: toggleIcon,
               ),
             ),
             SizedBox(
@@ -220,23 +264,30 @@ class _ProductDetailState extends State<ProductDetail> {
             ),
             Container(
               alignment: Alignment.centerRight,
-              width: 40,
-              //height: 40,
-              decoration: const BoxDecoration(
-                color: Colors.grey,
+              width: 70,
+              height: 40,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 3.0,
+                  color: Color.fromRGBO(13, 71, 161, 80),
+                ),
+                color: Colors.white30,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   bottomLeft: Radius.circular(20.0),
                 ),
               ),
-              child: IconButton(
-                icon: Icon(
-                  Icons.edit_square,
-                  color: Colors.black,
+              child: Center(
+                child: IconButton(
+                  icon: Icon(
+                    Icons.edit_square,
+                    size: 25,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Constants.ROUTE_REPORT);
+                  },
                 ),
-                onPressed: () {
-                  //_GoReport(context);
-                },
               ),
             ),
           ],
@@ -260,21 +311,44 @@ class _ProductDetailState extends State<ProductDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_LABEL);
                 },
                 child: Container(
+                  child: Center(
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: RotationTransition(
+                            turns: AlwaysStoppedAnimation(0.85),
+                            child: Icon(
+                              Icons.label_outline_rounded,
+                              color: Colors.grey,
+                              size: 50,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 5,
+                          right: 1,
+                          child: RotationTransition(
+                            turns: AlwaysStoppedAnimation(0.80),
+                            child: Icon(
+                              Icons.label_outline_rounded,
+                              color: Colors.black54,
+                              size: 40,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   alignment: Alignment.topCenter,
                   width: 80,
                   height: 80,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Colors.lightBlueAccent.shade100,
+                      color: Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
-                    color: Colors.blue,
-                    image: DecorationImage(
-                      alignment: Alignment.center,
-                      image: AssetImage('images/yemek.jpg'),
-                      fit: BoxFit.cover,
-                    ),
+                    color: Colors.white70,
                   ),
                 ),
               ),
@@ -283,15 +357,16 @@ class _ProductDetailState extends State<ProductDetail> {
               height: 5.0,
             ),
             Container(
+              width: 80,
+              height: 40,
               decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2.0,
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(15),
+                color: Colors.white60,
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text('Etiket \n Bilgileri'),
+                child: Text('Etiket \n Bilgileri',
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ],
@@ -308,21 +383,38 @@ class _ProductDetailState extends State<ProductDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_NVALUES);
                 },
                 child: Container(
+                  child: Center(
+                    child: Stack(
+                      children: [
+                        Positioned(
+                            child: Icon(
+                              Icons.stream_rounded,
+                              color: Colors.black12,
+                              size: 50,
+                            ),
+                        ),
+                        Positioned(
+                          right: 9.5,
+                            bottom: 10,
+                            child: Icon(
+                              Icons.stream_rounded,
+                              color: Colors.black54,
+                              size: 30,
+                            ),
+                        ),
+                      ],
+                    ),
+                  ),
                   alignment: Alignment.topCenter,
                   width: 80,
                   height: 80,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Colors.lightBlueAccent.shade100,
+                      color: Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
-                    color: Colors.blue,
-                    image: DecorationImage(
-                      alignment: Alignment.center,
-                      image: AssetImage('images/yemek.jpg'),
-                      fit: BoxFit.cover,
-                    ),
+                    color: Colors.white70,
                   ),
                 ),
               ),
@@ -331,15 +423,16 @@ class _ProductDetailState extends State<ProductDetail> {
               height: 5.0,
             ),
             Container(
+              width: 80,
+              height: 40,
               decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2.0,
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(15),
+                color: Colors.white60,
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text('Besin \n Değerleri'),
+                child: Text('Besin \n Değerleri',
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ],
@@ -356,21 +449,38 @@ class _ProductDetailState extends State<ProductDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_HEALTHYC);
                 },
                 child: Container(
+                  child: Center(
+                    child: Stack(
+                      children: [
+                        Positioned(
+                            child: Icon(
+                              Icons.health_and_safety_outlined,
+                              color: Colors.black12,
+                              size: 50,
+                            ),
+                        ),
+                        Positioned(
+                          right: 4.5,
+                          bottom: 2,
+                            child: Icon(
+                              Icons.health_and_safety_outlined,
+                              color: Colors.black54,
+                              size: 40,
+                            ),
+                        ),
+                      ],
+                    ),
+                  ),
                   alignment: Alignment.topCenter,
                   width: 80,
                   height: 80,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Colors.lightBlueAccent.shade100,
+                      color: Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
-                    color: Colors.blue,
-                    image: DecorationImage(
-                      alignment: Alignment.center,
-                      image: AssetImage('images/yemek.jpg'),
-                      fit: BoxFit.cover,
-                    ),
+                    color: Colors.white70,
                   ),
                 ),
               ),
@@ -379,15 +489,16 @@ class _ProductDetailState extends State<ProductDetail> {
               height: 5.0,
             ),
             Container(
+              width: 80,
+              height: 40,
               decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2.0,
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(15),
+                color: Colors.white60,
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text('Sağlıklı \n Tüketim'),
+                child: Text('Sağlıklı \n Tüketim',
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ],
@@ -404,21 +515,38 @@ class _ProductDetailState extends State<ProductDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_RECIPEREC);
                 },
                 child: Container(
+                  child: Center(
+                    child: Stack(
+                      children: [
+                        Positioned(
+                            child: Icon(
+                              Icons.food_bank_outlined,
+                              color: Colors.black12,
+                              size: 50,
+                            ),
+                        ),
+                        Positioned(
+                          right: 4,
+                            bottom: 1,
+                            child: Icon(
+                              Icons.food_bank_outlined,
+                              color: Colors.black54,
+                              size: 40,
+                            ),
+                        ),
+                      ],
+                    ),
+                  ),
                   alignment: Alignment.topCenter,
                   width: 80,
                   height: 80,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Colors.lightBlueAccent.shade100,
+                      color: Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
-                    color: Colors.blue,
-                    image: DecorationImage(
-                      alignment: Alignment.center,
-                      image: AssetImage('images/yemek.jpg'),
-                      fit: BoxFit.cover,
-                    ),
+                    color: Colors.white70,
                   ),
                 ),
               ),
@@ -427,15 +555,16 @@ class _ProductDetailState extends State<ProductDetail> {
               height: 5.0,
             ),
             Container(
+              width: 80,
+              height: 40,
               decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2.0,
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(15),
+                color: Colors.white60,
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Center(
-                child: Text('Önerilen \n Tarifler'),
+                child: Text('Önerilen \n Tarifler',
+                textAlign: TextAlign.center,
+                ),
               ),
             ),
           ],
