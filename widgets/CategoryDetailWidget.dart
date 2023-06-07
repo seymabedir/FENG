@@ -5,14 +5,14 @@ class CategoryDetailWidget extends StatelessWidget {
   String title;
   String imageUrl;
   String info;
-  String products;
+  List<Product> products;
 
-  CategoryDetailWidget(
-      {required this.title,
-      required this.imageUrl,
-      required this.info,
-      required this.products}
-  );
+  CategoryDetailWidget({
+    required this.title,
+    required this.imageUrl,
+    required this.info,
+    required this.products,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,22 +35,9 @@ class CategoryDetailWidget extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children : [
-          _buildCategoryProducts(context),
-        _buildCategoryProducts(context),
-        _buildCategoryProducts(context),
-    ]
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children : [
-              _buildCategoryProducts(context),
-              _buildCategoryProducts(context),
-              _buildCategoryProducts(context),
-            ]
+          children: products.map((product) {
+            return _buildCategoryProduct(context, product);
+          }).toList(),
         ),
         SizedBox(
           height: 10.0,
@@ -59,7 +46,7 @@ class CategoryDetailWidget extends StatelessWidget {
     );
   }
 
-  _buildCategoryTitle() {
+  Widget _buildCategoryTitle() {
     return Padding(
       padding: EdgeInsets.all(4.0),
       child: Center(
@@ -75,9 +62,8 @@ class CategoryDetailWidget extends StatelessWidget {
     );
   }
 
-  _buildCategoryImage() {
+  Widget _buildCategoryImage() {
     return Container(
-      //child: Image.network(this.imageUrl),
       alignment: Alignment.topCenter,
       width: 200,
       height: 155,
@@ -95,7 +81,7 @@ class CategoryDetailWidget extends StatelessWidget {
     );
   }
 
-  _buildCategoryInfo() {
+  Widget _buildCategoryInfo() {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -120,63 +106,66 @@ class CategoryDetailWidget extends StatelessWidget {
     );
   }
 
-  _buildCategoryProducts(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY_PRODUCT);
-            //_GoCategory1(context);
-          },
-          child: Container(
-            alignment: Alignment.bottomCenter,
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.blue.withOpacity(0.5),
-            ),
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                      image: NetworkImage(this.imageUrl),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    width: 80,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        width: 5.0,
-                        color: Colors.white,
-                      ),
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                    child: Center(
-                      child: Text(
-                        this.products,
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+  Widget _buildCategoryProduct(BuildContext context, Product product) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY_PRODUCT);
+      },
+      child: Container(
+        alignment: Alignment.bottomCenter,
+        width: 80,
+        height: 80,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.blue.withOpacity(0.5),
         ),
-      ],
+        child: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                  image: NetworkImage(product.imageUrl),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: 80,
+                height: 30,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    width: 5.0,
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(13),
+                ),
+                child: Center(
+                  child: Text(
+                    product.title,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
+
+class Product {
+  String title;
+  String imageUrl;
+
+  Product({required this.title, required this.imageUrl});
+}
+

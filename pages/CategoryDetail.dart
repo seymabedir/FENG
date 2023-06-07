@@ -81,8 +81,20 @@ class _CategoryDetailState extends State<CategoryDetail> {
       title: "SÜT VE SÜT ÜRÜNLERİ",
       imageUrl: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
       info: "xxxxxxxxxxxxxxxxxxxxx",
-      products: "süt",
-      //['SÜT', 'YOĞURT', 'PEYNİR', 'LOR-ÇÖKELEK', 'KREMA', 'AYRAN-KEFİR', ]
+      products: [
+        Product(
+          title: "SÜT",
+          imageUrl: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
+        ),
+        Product(
+          title: "YOĞURT",
+          imageUrl: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
+        ),
+        Product(
+          title: "PEYNİR",
+          imageUrl: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
+        ),
+      ],
     );
   }
 
