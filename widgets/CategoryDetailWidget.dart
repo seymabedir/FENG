@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
+import 'package:project/widgets/CategoryList.dart';
 
 class CategoryDetailWidget extends StatelessWidget {
   String title;
@@ -16,6 +17,25 @@ class CategoryDetailWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> productRows = [];
+    for (int i = 0; i < products.length; i += 3) {
+      int endIndex = i + 3;
+      if (endIndex > products.length) {
+        endIndex = products.length;
+      }
+
+      List<Product> rowProducts = products.sublist(i, endIndex);
+
+      productRows.add(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: rowProducts.map((product) {
+            return _buildCategoryProduct(context, product);
+          }).toList(),
+        ),
+      );
+
+    }
     return Column(
       children: <Widget>[
         SizedBox(
@@ -33,11 +53,8 @@ class CategoryDetailWidget extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: products.map((product) {
-            return _buildCategoryProduct(context, product);
-          }).toList(),
+        Column(
+          children: productRows,
         ),
         SizedBox(
           height: 10.0,
@@ -84,9 +101,10 @@ class CategoryDetailWidget extends StatelessWidget {
   Widget _buildCategoryInfo() {
     return Container(
       decoration: BoxDecoration(
+        color: Color.fromRGBO(224, 247, 250, 70),
         border: Border.all(
           width: 5.0,
-          color: Colors.white,
+          color: Colors.white54,
         ),
         borderRadius: BorderRadius.circular(15),
       ),
@@ -109,7 +127,7 @@ class CategoryDetailWidget extends StatelessWidget {
   Widget _buildCategoryProduct(BuildContext context, Product product) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY_PRODUCT);
+        Navigator.of(context).pushNamed(product.route);
       },
       child: Container(
         alignment: Alignment.bottomCenter,
@@ -147,7 +165,7 @@ class CategoryDetailWidget extends StatelessWidget {
                   child: Text(
                     product.title,
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 10,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -165,7 +183,11 @@ class CategoryDetailWidget extends StatelessWidget {
 class Product {
   String title;
   String imageUrl;
+  String route;
 
-  Product({required this.title, required this.imageUrl});
+  Product({
+    required this.title,
+    required this.imageUrl,
+    required this.route,
+  });
 }
-

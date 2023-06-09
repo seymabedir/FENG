@@ -13,16 +13,16 @@ class CategoryList extends StatelessWidget {
       child: Row(
         children: categories.map((category) {
           return Row(
-              children: [
-                SizedBox(
-                  width: 5.0,
-                ),
-                _buildCategoryCard(context, category),
-                SizedBox(
-                  width: 5.0,
-                ),
-              ],
-            );
+            children: [
+              SizedBox(
+                width: 5.0,
+              ),
+              _buildCategoryCard(context, category),
+              SizedBox(
+                width: 5.0,
+              ),
+            ],
+          );
         }).toList(),
       ),
     );
@@ -31,7 +31,7 @@ class CategoryList extends StatelessWidget {
   Widget _buildCategoryCard(BuildContext context, Category category) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY_DETAIL);
+        Navigator.of(context).pushNamed(category.route);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -108,11 +108,11 @@ class CategoryList extends StatelessWidget {
 class Category {
   String title;
   String imageUrl;
-  String info;
+  String route;
 
   Category({
     required this.title,
     required this.imageUrl,
-    required this.info,
+    required this.route,
   });
 }

@@ -84,58 +84,28 @@ class BoardWidget extends StatelessWidget {
     );
   }
 
-  _buildSendRecipeButton(BuildContext context) {
-    return Column(
-      children: [
-        InkWell(
-          onTap: () {
-            //Navigator.of(context).pushNamed(Constants.ROUTE_SEND_RECIPE);
-          },
-          child: ClipOval(
-            child: Container(
-              child: Center(
-                child: Text('+',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 25.0,),
-                  ),
-              ),
-              alignment: Alignment.topCenter,
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 5,
-                ),
-                borderRadius: BorderRadius.circular(100),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   _buildExpirationDate(DateTime expirationDate) {
-    String expiryDate = expirationDate.toString();
+    String expiryDate = expirationDate.toLocal().toString().split(' ')[0];
     return Row(
       children: [
-        Text('Son Kullanma Tarihi : '),
+        Text('Son Kullanma Tarihi: '),
         SizedBox(width: 5.0,),
-        Text(expiryDate,),
+        Text(expiryDate),
       ],
     );
   }
 
   _buildOpenDate(DateTime openDate) {
-    String packetOpening = openDate.toString();
+    String packetOpening = openDate.toLocal().toString().split(' ')[0];
     return Row(
       children: [
-        Text('Ürünün Açıldığı Tarih : '),
+        Text('Ürünün Açıldığı Tarih: '),
         SizedBox(width: 5.0,),
-        Text(packetOpening,),
+        Text(packetOpening),
       ],
     );
   }
+
 
   _buildConsumeDays() {
     return Row(
