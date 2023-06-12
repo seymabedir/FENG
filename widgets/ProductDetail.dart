@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-
 class ProductDetail extends StatefulWidget {
   String categoryName;
   String productName;
@@ -10,15 +9,14 @@ class ProductDetail extends StatefulWidget {
   //bool isFav;
   //bool isReported;
 
-  ProductDetail(
-  {required this.categoryName,
+  ProductDetail({
+    required this.categoryName,
     required this.productName,
     required this.imageUrl,
     required this.avgRate,
     //this.isFav,
     //this.isReported,
-  }
-);
+  });
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -27,29 +25,27 @@ class ProductDetail extends StatefulWidget {
 class _ProductDetailState extends State<ProductDetail> {
   bool isFav = true;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         _buildCategoryTitle(context),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         _buildProductTitle(context),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         _buildProductImage(context),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         _buildEvaluation(context),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         _buildButtons(context),
@@ -69,7 +65,7 @@ class _ProductDetailState extends State<ProductDetail> {
         child: Center(
           child: Text(
             this.widget.categoryName,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
               fontWeight: FontWeight.bold,
               fontSize: 20,
@@ -92,7 +88,7 @@ class _ProductDetailState extends State<ProductDetail> {
         child: Center(
           child: Text(
             this.widget.productName,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
               fontWeight: FontWeight.bold,
               fontSize: 16,
@@ -112,7 +108,7 @@ class _ProductDetailState extends State<ProductDetail> {
         decoration: BoxDecoration(
           border: Border.all(
             width: 5.0,
-            color: Color.fromRGBO(13, 71, 161, 10),
+            color: const Color.fromRGBO(13, 71, 161, 10),
           ),
           borderRadius: BorderRadius.circular(100),
           image: DecorationImage(
@@ -133,22 +129,23 @@ class _ProductDetailState extends State<ProductDetail> {
           decoration: BoxDecoration(
             border: Border.all(
               width: 3.0,
-              color: Color.fromRGBO(13, 71, 161, 80),
+              color: const Color.fromRGBO(13, 71, 161, 80),
             ),
             color: Colors.white30,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20.0),
               bottomRight: Radius.circular(20.0),
             ),
           ),
           child: Center(
-            child: Row(  //yıldızlar
+            child: Row(
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.star,
                           color: Colors.yellow,
                         ),
@@ -161,7 +158,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.star,
                           color: Colors.yellow,
                         ),
@@ -174,7 +171,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.star,
                           color: Colors.yellow,
                         ),
@@ -187,7 +184,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.star_border_outlined,
                           //color: Colors.yellow,
                         ),
@@ -200,7 +197,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.star_border_outlined,
                           //color: Colors.yellow,
                         ),
@@ -221,12 +218,13 @@ class _ProductDetailState extends State<ProductDetail> {
             borderRadius: BorderRadius.circular(15),
           ),
           child: Center(
-            child: Text('${widget.avgRate}',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            child: Text(
+              '${widget.avgRate}',
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           //height: 85,
           width: 130,
         ),
@@ -239,10 +237,10 @@ class _ProductDetailState extends State<ProductDetail> {
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 3.0,
-                  color: Color.fromRGBO(13, 71, 161, 80),
+                  color: const Color.fromRGBO(13, 71, 161, 80),
                 ),
                 color: Colors.white30,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   bottomLeft: Radius.circular(20.0),
                 ),
@@ -254,12 +252,11 @@ class _ProductDetailState extends State<ProductDetail> {
                     color: isFav ? Colors.black : Colors.red,
                     size: 25,
                   ),
-
                   onPressed: toggleIcon,
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Container(
@@ -269,17 +266,17 @@ class _ProductDetailState extends State<ProductDetail> {
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 3.0,
-                  color: Color.fromRGBO(13, 71, 161, 80),
+                  color: const Color.fromRGBO(13, 71, 161, 80),
                 ),
                 color: Colors.white30,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   bottomLeft: Radius.circular(20.0),
                 ),
               ),
               child: Center(
                 child: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.edit_square,
                     size: 25,
                     color: Colors.black,
@@ -299,7 +296,7 @@ class _ProductDetailState extends State<ProductDetail> {
   _buildButtons(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
+        const SizedBox(
           width: 7.5,
           height: 10,
         ),
@@ -308,12 +305,13 @@ class _ProductDetailState extends State<ProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_LABEL);
+                  Navigator.of(context)
+                      .pushNamed(Constants.ROUTE_PRODUCT_LABEL);
                 },
                 child: Container(
                   child: Center(
                     child: Stack(
-                      children: [
+                      children: const [
                         Positioned(
                           child: RotationTransition(
                             turns: AlwaysStoppedAnimation(0.85),
@@ -345,7 +343,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Color.fromRGBO(13, 71, 161, 80),
+                      color: const Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white70,
@@ -353,7 +351,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Container(
@@ -363,15 +361,16 @@ class _ProductDetailState extends State<ProductDetail> {
                 color: Colors.white60,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Center(
-                child: Text('Etiket \n Bilgileri',
+              child: const Center(
+                child: Text(
+                  'Etiket \n Bilgileri',
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
           height: 10,
         ),
@@ -380,27 +379,28 @@ class _ProductDetailState extends State<ProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_NVALUES);
+                  Navigator.of(context)
+                      .pushNamed(Constants.ROUTE_PRODUCT_NVALUES);
                 },
                 child: Container(
                   child: Center(
                     child: Stack(
-                      children: [
+                      children: const [
                         Positioned(
-                            child: Icon(
-                              Icons.stream_rounded,
-                              color: Colors.black12,
-                              size: 50,
-                            ),
+                          child: Icon(
+                            Icons.stream_rounded,
+                            color: Colors.black12,
+                            size: 50,
+                          ),
                         ),
                         Positioned(
                           right: 9.5,
-                            bottom: 10,
-                            child: Icon(
-                              Icons.stream_rounded,
-                              color: Colors.black54,
-                              size: 30,
-                            ),
+                          bottom: 10,
+                          child: Icon(
+                            Icons.stream_rounded,
+                            color: Colors.black54,
+                            size: 30,
+                          ),
                         ),
                       ],
                     ),
@@ -411,7 +411,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Color.fromRGBO(13, 71, 161, 80),
+                      color: const Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white70,
@@ -419,7 +419,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Container(
@@ -429,15 +429,16 @@ class _ProductDetailState extends State<ProductDetail> {
                 color: Colors.white60,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Center(
-                child: Text('Besin \n Değerleri',
+              child: const Center(
+                child: Text(
+                  'Besin \n Değerleri',
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
           height: 10,
         ),
@@ -446,27 +447,28 @@ class _ProductDetailState extends State<ProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_HEALTHYC);
+                  Navigator.of(context)
+                      .pushNamed(Constants.ROUTE_PRODUCT_HEALTHYC);
                 },
                 child: Container(
                   child: Center(
                     child: Stack(
-                      children: [
+                      children: const [
                         Positioned(
-                            child: Icon(
-                              Icons.health_and_safety_outlined,
-                              color: Colors.black12,
-                              size: 50,
-                            ),
+                          child: Icon(
+                            Icons.health_and_safety_outlined,
+                            color: Colors.black12,
+                            size: 50,
+                          ),
                         ),
                         Positioned(
                           right: 4.5,
                           bottom: 2,
-                            child: Icon(
-                              Icons.health_and_safety_outlined,
-                              color: Colors.black54,
-                              size: 40,
-                            ),
+                          child: Icon(
+                            Icons.health_and_safety_outlined,
+                            color: Colors.black54,
+                            size: 40,
+                          ),
                         ),
                       ],
                     ),
@@ -477,7 +479,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Color.fromRGBO(13, 71, 161, 80),
+                      color: const Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white70,
@@ -485,7 +487,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Container(
@@ -495,15 +497,16 @@ class _ProductDetailState extends State<ProductDetail> {
                 color: Colors.white60,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Center(
-                child: Text('Sağlıklı \n Tüketim',
+              child: const Center(
+                child: Text(
+                  'Sağlıklı \n Tüketim',
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
           height: 10,
         ),
@@ -512,27 +515,28 @@ class _ProductDetailState extends State<ProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_RECIPEREC);
+                  Navigator.of(context)
+                      .pushNamed(Constants.ROUTE_PRODUCT_RECIPEREC);
                 },
                 child: Container(
                   child: Center(
                     child: Stack(
-                      children: [
+                      children: const [
                         Positioned(
-                            child: Icon(
-                              Icons.food_bank_outlined,
-                              color: Colors.black12,
-                              size: 50,
-                            ),
+                          child: Icon(
+                            Icons.food_bank_outlined,
+                            color: Colors.black12,
+                            size: 50,
+                          ),
                         ),
                         Positioned(
                           right: 4,
-                            bottom: 1,
-                            child: Icon(
-                              Icons.food_bank_outlined,
-                              color: Colors.black54,
-                              size: 40,
-                            ),
+                          bottom: 1,
+                          child: Icon(
+                            Icons.food_bank_outlined,
+                            color: Colors.black54,
+                            size: 40,
+                          ),
                         ),
                       ],
                     ),
@@ -543,7 +547,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
-                      color: Color.fromRGBO(13, 71, 161, 80),
+                      color: const Color.fromRGBO(13, 71, 161, 80),
                     ),
                     borderRadius: BorderRadius.circular(100),
                     color: Colors.white70,
@@ -551,7 +555,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5.0,
             ),
             Container(
@@ -561,9 +565,10 @@ class _ProductDetailState extends State<ProductDetail> {
                 color: Colors.white60,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Center(
-                child: Text('Önerilen \n Tarifler',
-                textAlign: TextAlign.center,
+              child: const Center(
+                child: Text(
+                  'Önerilen \n Tarifler',
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),

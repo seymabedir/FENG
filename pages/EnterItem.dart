@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-class SendRecipePage extends StatefulWidget {
-  const SendRecipePage({Key? key}) : super(key: key);
+
+class EnterItem extends StatefulWidget {
+  const EnterItem({Key? key}) : super(key: key);
 
   @override
-  _SendRecipePageState createState() => _SendRecipePageState();
+  _EnterItemState createState() => _EnterItemState();
 }
 
-class _SendRecipePageState extends State<SendRecipePage> {
-  final TextEditingController _recipeNameController = TextEditingController();
-  final TextEditingController _ingredientsController = TextEditingController();
-  final TextEditingController _instructionsController = TextEditingController();
+class _EnterItemState extends State<EnterItem> {
+  final TextEditingController _SKTController = TextEditingController();
+  final TextEditingController _ODController = TextEditingController();
+  final TextEditingController _NODController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class _SendRecipePageState extends State<SendRecipePage> {
       backgroundColor: Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(200, 235, 254, 10),
-        title: const Text('TARİFİNİZİ PAYLAŞMAK İSTER MİSİNİZ?'),
+        title: const Text(''),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.chevron_left),
@@ -36,8 +38,7 @@ class _SendRecipePageState extends State<SendRecipePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(
-                  Icons.home_outlined,
+                icon: Icon(Icons.home_outlined,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
@@ -91,18 +92,16 @@ class _SendRecipePageState extends State<SendRecipePage> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: TextField(
-                      controller: _recipeNameController,
+                      controller: _SKTController,
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
                       textInputAction: TextInputAction.newline,
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                       decoration: InputDecoration(
-                        hintText: 'Tarifin Adı : ',
+                        hintText: 'Son Kullanma Tarihi : ',
                         hintStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                          fontWeight: FontWeight.bold, color: Colors.black,),
                       ),
                     ),
                   ),
@@ -111,7 +110,7 @@ class _SendRecipePageState extends State<SendRecipePage> {
                   ),
                   Container(
                     alignment: Alignment.topCenter,
-                    height: 200,
+                    height: 50,
                     width: 350,
                     decoration: BoxDecoration(
                       border: Border.all(
@@ -122,21 +121,16 @@ class _SendRecipePageState extends State<SendRecipePage> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: TextField(
-                      controller: _ingredientsController,
+                      controller: _ODController,
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
                       textInputAction: TextInputAction.newline,
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                       decoration: InputDecoration(
-                        hintText: 'Tarifin Malzemeleri : '
-                            '\n 1. '
-                            '\n 2. '
-                            '\n 3. ',
+                        hintText: 'Ürünün Açıldığı Tarih : ',
                         hintStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                          fontWeight: FontWeight.bold, color: Colors.black,),
                       ),
                     ),
                   ),
@@ -145,7 +139,7 @@ class _SendRecipePageState extends State<SendRecipePage> {
                   ),
                   Container(
                     alignment: Alignment.topCenter,
-                    height: 200,
+                    height: 50,
                     width: 350,
                     decoration: BoxDecoration(
                       border: Border.all(
@@ -156,18 +150,16 @@ class _SendRecipePageState extends State<SendRecipePage> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: TextField(
-                      controller: _instructionsController,
+                      controller: _NODController,
                       maxLines: null,
                       keyboardType: TextInputType.multiline,
                       textInputAction: TextInputAction.newline,
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                       decoration: InputDecoration(
-                        hintText: 'Tarifin Yapılışı : ',
+                        hintText: 'Açıldıktan Sonra Kullanılabilen Gün Sayısı :  ',
                         hintStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                          fontWeight: FontWeight.bold, color: Colors.black,),
                       ),
                     ),
                   ),
@@ -189,9 +181,7 @@ class _SendRecipePageState extends State<SendRecipePage> {
                       child: Text(
                         'Fotoğraf eklemek ister misiniz ?',
                         style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
+                          color: Colors.black, fontWeight: FontWeight.bold,),
                       ),
                     ),
                   ),
@@ -199,12 +189,8 @@ class _SendRecipePageState extends State<SendRecipePage> {
                     height: 20,
                     width: 350,
                   ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Container(
+                  Center(
+                      child : Container(
                         alignment: Alignment.centerRight,
                         width: 90,
                         height: 90,
@@ -219,75 +205,16 @@ class _SendRecipePageState extends State<SendRecipePage> {
                         child: Center(
                           child: TextButton(
                             onPressed: () {
-                              // fotoğraf ekleme kısmı
+                              // Handle button press
                             },
                             child: Text(
                               '+',
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                fontSize: 18, fontWeight: FontWeight.bold,),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 40,
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        width: 90,
-                        height: 90,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 2.0,
-                            color: Colors.lightBlueAccent,
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Center(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '+',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 40,
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        width: 90,
-                        height: 90,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            width: 2.0,
-                            color: Colors.lightBlueAccent,
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Center(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              '+',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),
@@ -309,11 +236,9 @@ class _SendRecipePageState extends State<SendRecipePage> {
                 },
                 child: Text(
                   'GÖNDER',
-                  style: TextStyle(
-                    fontSize: 30.0,
+                  style: TextStyle(fontSize: 30.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,
-                  ),
+                    color: Colors.grey,),
                 ),
               ),
             ),
@@ -324,6 +249,7 @@ class _SendRecipePageState extends State<SendRecipePage> {
   }
 
   sendRecipe() {
-    print('Tarif Gönderildi...');
+    print('Ürün Dolaba Eklendi...');
   }
 }
+

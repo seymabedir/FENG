@@ -24,9 +24,6 @@ class _ContactPageState extends State<ContactPage> {
           },
         ),
       ),
-      body: Container(
-
-      ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           color: Color.fromRGBO(200, 235, 254, 10),
@@ -62,6 +59,66 @@ class _ContactPageState extends State<ContactPage> {
               ),
             ],
           ),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Communication Information:',
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'For any inquiries or assistance, please reach out to us:',
+              style: TextStyle(fontSize: 16.0),
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Email: example@example.com',
+              style: TextStyle(fontSize: 16.0),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'Phone: +1234567890',
+              style: TextStyle(fontSize: 16.0),
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Links:',
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            GestureDetector(
+              onTap: () {
+                // Implement logic to open a link when tapped
+              },
+              child: Text(
+                'Website',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            SizedBox(height: 8.0),
+            GestureDetector(
+              onTap: () {
+                // Implement logic to open a link when tapped
+              },
+              child: Text(
+                'Social Media',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

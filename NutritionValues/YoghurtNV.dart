@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
+import 'package:project/widgets/NutritionValuesWidget.dart';
 
-class HelpPage extends StatefulWidget {
-  const HelpPage({Key? key}) : super(key: key);
+class YoghurtNV extends StatelessWidget {
+  const YoghurtNV({Key? key}) : super(key: key);
 
-  @override
-  _HelpPageState createState() => _HelpPageState();
-}
-
-class _HelpPageState extends State<HelpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(200, 235, 254, 10),
-        title: const Text('YARDIM'),
+        title: const Text(''),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.chevron_left),
@@ -33,7 +29,7 @@ class _HelpPageState extends State<HelpPage> {
             children: [
               IconButton(
                 icon: Icon(Icons.home_outlined,
-                  color: Colors.black,
+                  color: Colors.grey,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
@@ -61,51 +57,23 @@ class _HelpPageState extends State<HelpPage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Tips:',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              '- Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              '- Ut in lacus eu ligula commodo sagittis.',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              'Communication Information:',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              'For any inquiries or assistance, please reach out to us:',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              'Email: example@example.com',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              'Phone: +1234567890',
-              style: TextStyle(fontSize: 16.0),
-            ),
-          ],
-        ),
-      ),
+      body: _buildNutriValues(),
     );
   }
 
+  _buildNutriValues() {
+    return NutritionValuesWidget(
+      categoryName: "SÜT VE SÜT ÜRÜNLERİ",
+      imageUrl: "https://img.freepik.com/free-photo/greek-yogurt-wooden-bowl-isolated-white-background_123827-22632.jpg?w=996&t=st=1686231965~exp=1686232565~hmac=b4a28162470b78fe69f747bf6de086549ada7de4f2f87b8b3bcd19636b7d64cd",
+      productName: "YOĞURT",
+      productInfo: "xxxxxxxxxxxx."
+          '\n * LAKTOZ İÇERİR.'
+          ' \n * Glüten içermez '
+          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
+          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
+          '\n * Geçerlilik : 90 Gün"',
+    );
+  }
 }
 
 

@@ -1,41 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:project/services/providers.dart';
 import 'package:project/utilities/constants.dart';
 
-class AccountInfoPage extends StatefulWidget {
+class AccountInfoPage extends ConsumerWidget {
   const AccountInfoPage({Key? key}) : super(key: key);
 
   @override
-  _AccountInfoPageState createState() => _AccountInfoPageState();
-}
-
-class _AccountInfoPageState extends State<AccountInfoPage> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authProvider =
+        ref.read(firebaseAuthProvider).currentUser!;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(200, 235, 254, 10),
+      backgroundColor: const Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(200, 235, 254, 10),
-          title: const Text('Hesap Bilgileri'),
+        backgroundColor: const Color.fromRGBO(200, 235, 254, 10),
+        title: const Text('Hesap Bilgileri'),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.chevron_left),
+          icon: const Icon(Icons.chevron_left),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
       ),
-      body: Container(
-
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Username: ${authProvider.displayName}', //$username
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'Email: ${authProvider.email}', //$email
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'Phone Number: ${authProvider.phoneNumber ?? '0532-111-1111'}', //$phoneNumber
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Color.fromRGBO(200, 235, 254, 10),
+          color: const Color.fromRGBO(200, 235, 254, 10),
           height: kToolbarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined,
+                icon: const Icon(
+                  Icons.home_outlined,
                   color: Colors.black,
                 ),
                 onPressed: () {
@@ -43,19 +62,19 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
                 },
               ),
               IconButton(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
               IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
               IconButton(
-                icon: Icon(Icons.dataset_outlined),
+                icon: const Icon(Icons.dataset_outlined),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
@@ -66,9 +85,4 @@ class _AccountInfoPageState extends State<AccountInfoPage> {
       ),
     );
   }
-
-
 }
-
-
-

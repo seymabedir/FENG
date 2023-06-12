@@ -68,20 +68,41 @@ class CategoryPage extends StatelessWidget {
   Widget _buildCategoryPage() {
     List<Category> categories = [
       Category(
-        title: "Category 1",
-        imageUrl: "https://example.com/category1.jpg",
-        info: "Info 1",
+        title: "SÜT VE SÜT ÜRÜNLERİ",
+        imageUrl: "https://www.dairyindustries.com/wp-content/uploads/thumbnail_Dairy-Products.jpg",
+        route: Constants.ROUTE_DAIRY,
       ),
       Category(
-        title: "Category 2",
-        imageUrl: "https://example.com/category2.jpg",
-        info: "Info 2",
+        title: "KIRMIZI ET",
+        imageUrl: "https://cdn.yeniakit.com.tr/images/detail/1565543377-2d0cd8.jpg",
+        route: Constants.ROUTE_REDMEAT,
       ),
       Category(
-        title: "Category 3",
-        imageUrl: "https://example.com/category3.jpg",
-        info: "Info 3",
+        title: "DENİZ ÜRÜNLERİ",
+        imageUrl: "https://aydinlarseafood.com/wp-content/uploads/2023/02/aydinlar-sea-food-neden-biz-570x330.jpg",
+        route: Constants.ROUTE_SEAFOOD,
       ),
+      Category(
+        title: "BEYAZ ET",
+        imageUrl: "https://img.freepik.com/premium-photo/raw-chicken-meat-fillet-thigh-wings-legs_82893-9312.jpg?w=740",
+        route: Constants.ROUTE_WHITEMEAT,
+      ),
+      Category(
+          title: "KONSERVE GIDALAR",
+          imageUrl: "https://img.freepik.com/free-photo/jars-with-preserved-food-assortment_23-2149239013.jpg?w=900&t=st=1686229208~exp=1686229808~hmac=bba18b7931db4b897412490a470e75c3f42f26007244096855248946783a5860",
+          route: Constants.ROUTE_CANNED_FOODS,
+      ),
+      Category(
+          title: "MEYVE SULARI",
+          imageUrl: "https://img.freepik.com/free-photo/healthy-juice-bottles-arrangement_23-2148785309.jpg?w=360&t=st=1686229346~exp=1686229946~hmac=7e740e2087823a429955cb5d2ba6cca248142c820f5918d933bd2c48ac94dd4b",
+          route: Constants.ROUTE_FRUIT_JUICE,
+      ),
+      Category(
+          title: "HAZIR GIDALAR",
+          imageUrl: "https://www.yeniadana.net/resimler/2018-10/31/0934339733375.jpg",
+          route: Constants.ROUTE_PREPARED_FOODS,
+      ),
+
     ];
 
     List<Widget> rows = [];
@@ -108,8 +129,8 @@ class CategoryPage extends StatelessWidget {
   }
 
   _buildCategoryList(Category category) {
-      return CategoryList(
-        categories: [category],
-      );
-    }
+    return CategoryList(
+      categories: [category],
+    );
   }
+}

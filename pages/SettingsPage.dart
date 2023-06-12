@@ -9,6 +9,21 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  bool _enableNotifications = true;
+  bool _enableDarkMode = false;
+
+  void _toggleNotifications(bool value) {
+    setState(() {
+      _enableNotifications = value;
+    });
+  }
+
+  void _toggleDarkMode(bool value) {
+    setState(() {
+      _enableDarkMode = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +76,31 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
         ),
       ),
-      body: Container(),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Notifications'),
+            trailing: Switch(
+              value: _enableNotifications,
+              onChanged: _toggleNotifications,
+            ),
+          ),
+          ListTile(
+            title: Text('Dark Mode'),
+            trailing: Switch(
+              value: _enableDarkMode,
+              onChanged: _toggleDarkMode,
+            ),
+          ),
+          ListTile(
+            title: Text('Language'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.pushNamed(context, '/language');
+            },
+          ),
+        ],
+      ),
     );
   }
 

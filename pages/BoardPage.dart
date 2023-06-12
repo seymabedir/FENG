@@ -11,14 +11,14 @@ class BoardPage extends StatelessWidget {
       backgroundColor: Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(200, 235, 254, 10),
-          title: const Text('DOLAP'),
-          centerTitle: true,
-          leading: IconButton(
-            icon: Icon(Icons.chevron_left),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
+        title: const Text('DOLAP'),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
@@ -64,12 +64,17 @@ class BoardPage extends StatelessWidget {
   _buildBoard() {
     return Container(
       child: ListView.builder(
-        itemCount: 5,
+        itemCount: 3,
         itemBuilder: (context,index){
           if (index == 0) {
             return SizedBox(height: 15.0 , width: 10.0,);
-          } else if (index == 4) {
-            return SizedBox(height: 5.0 , width: 10.0,);
+          } else if (index == 2) {
+            return Column(
+              children: [
+                SizedBox(height: 5.0 , width: 10.0,),
+                _buildEnterItem(context),
+              ],
+            );
           } else {
             return _buildShelf();
           }
@@ -87,7 +92,34 @@ class BoardPage extends StatelessWidget {
     );
   }
 
-}
+  _buildEnterItem(BuildContext context) {
+    return Container(
+      child :
+        InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(Constants.ROUTE_ENTER_ITEM);
+          },
+            child: Container(
+              width: 75,
+              height: 50,
+              child: Center(
+                child: Text('+',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 25.0,),
+                ),
+              ),
+              alignment: Alignment.topCenter,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 5,
+                ),
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+            ),
+        ),
+    );
+  }
 
+}
 
 
