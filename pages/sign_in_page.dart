@@ -49,7 +49,7 @@ class GoogleSignInButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SignInButton(
       Buttons.Google,
-      padding: const EdgeInsets.symmetric(horizontal: 60),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       onPressed: () {
         ref.read(authNotifierProvider.notifier).signInWithGoogle();
       },
