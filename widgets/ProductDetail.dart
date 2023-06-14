@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project/services/dynamic_link_service.dart';
 import 'package:project/utilities/constants.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ProductDetail extends StatefulWidget {
   String categoryName;
@@ -24,6 +26,7 @@ class ProductDetail extends StatefulWidget {
 
 class _ProductDetailState extends State<ProductDetail> {
   bool isFav = true;
+  bool isToggled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +45,11 @@ class _ProductDetailState extends State<ProductDetail> {
         ),
         _buildProductImage(context),
         const SizedBox(
-          height: 15,
+          height: 10,
         ),
         _buildEvaluation(context),
         const SizedBox(
-          height: 30,
+          height: 10,
         ),
         _buildButtons(context),
       ],
@@ -145,65 +148,55 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.star,
-                          color: Colors.yellow,
+                        icon:  Icon(
+                          isToggled ? Icons.star : Icons.star_border_outlined,
+                          color: isToggled ? Colors.yellow : Colors.black,
                         ),
-                        onPressed: () {
-                          //_GoCategories(context);
-                        },
+                        onPressed:toggleIconButton,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.star,
-                          color: Colors.yellow,
+                        icon: Icon(
+                          isToggled ? Icons.star : Icons.star_border_outlined,
+                          color: isToggled ? Colors.yellow : Colors.black,
                         ),
-                        onPressed: () {
-                          //_GoCategories(context);
-                        },
+                          onPressed: toggleIconButton,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.star,
-                          color: Colors.yellow,
+                        icon:  Icon(
+                          isToggled ? Icons.star : Icons.star_border_outlined,
+                          color: isToggled ? Colors.yellow : Colors.black,
                         ),
-                        onPressed: () {
-                          //_GoCategories(context);
-                        },
+                          onPressed: toggleIconButton,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.star_border_outlined,
-                          //color: Colors.yellow,
+                        icon: Icon(
+                          isToggled ? Icons.star : Icons.star_border_outlined,
+                          color: isToggled ? Colors.yellow : Colors.black,
                         ),
-                        onPressed: () {
-                          //_GoCategories(context);
-                        },
+                        onPressed: toggleIconButton,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.star_border_outlined,
-                          //color: Colors.yellow,
+                        icon:  Icon(
+                          isToggled ? Icons.star : Icons.star_border_outlined,
+                          color: isToggled ? Colors.yellow : Colors.black,
                         ),
-                        onPressed: () {
-                          //_GoCategories(context);
-                        },
+                        onPressed: toggleIconButton,
                       ),
                     ),
                   ),
@@ -287,6 +280,39 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            Container(
+              alignment: Alignment.centerRight,
+              width: 70,
+              height: 40,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 3.0,
+                  color: const Color.fromRGBO(13, 71, 161, 80),
+                ),
+                color: Colors.white30,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  bottomLeft: Radius.circular(20.0),
+                ),
+              ),
+              child: Center(
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.share,
+                    size: 25,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    DynamicLinksProvider()
+                        .createLink("yoghurt_details")
+                        .then((value) => Share.share(value));
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ],
@@ -352,7 +378,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             const SizedBox(
-              height: 5.0,
+              height: 3.0,
             ),
             Container(
               width: 80,
@@ -420,7 +446,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             const SizedBox(
-              height: 5.0,
+              height: 3.0,
             ),
             Container(
               width: 80,
@@ -488,7 +514,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             const SizedBox(
-              height: 5.0,
+              height: 3.0,
             ),
             Container(
               width: 80,
@@ -556,7 +582,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             const SizedBox(
-              height: 5.0,
+              height: 3.0,
             ),
             Container(
               width: 80,
@@ -581,6 +607,12 @@ class _ProductDetailState extends State<ProductDetail> {
   void toggleIcon() {
     setState(() {
       isFav = !isFav;
+    });
+  }
+
+  void toggleIconButton() {
+    setState(() {
+      isToggled = !isToggled;
     });
   }
 }

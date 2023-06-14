@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:project/utilities/constants.dart';
 
 
 class SuggestionList extends StatefulWidget {
   String recipeName;
   String imageUrl;
   int ID;
-  //final Clues = [];
+
 
   SuggestionList({required this.recipeName,
     required this.imageUrl,
@@ -34,6 +35,7 @@ class _SuggestionListState extends State<SuggestionList> {
     return SingleChildScrollView(
       child: InkWell(
         onTap: () {
+          Navigator.of(context).pushNamed(Constants.ROUTE_SUTLAC);
         },
         child: Row(
           children: [
@@ -80,7 +82,7 @@ class _SuggestionListState extends State<SuggestionList> {
                   ),
                   Positioned(
                     top: 45,
-                    left: 150, //text uzunluğuna göre nasıl belirlenebilir ?
+                    left: 150,
                     child: Text(this.widget.recipeName,
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black54, fontSize: 18, fontWeight: FontWeight.bold,),
