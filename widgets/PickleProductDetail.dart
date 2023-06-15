@@ -3,7 +3,7 @@ import 'package:project/services/dynamic_link_service.dart';
 import 'package:project/utilities/constants.dart';
 import 'package:share_plus/share_plus.dart';
 
-class ProductDetail extends StatefulWidget {
+class PickleProductDetail extends StatefulWidget {
   String categoryName;
   String productName;
   String imageUrl;
@@ -11,7 +11,7 @@ class ProductDetail extends StatefulWidget {
   //bool isFav;
   //bool isReported;
 
-  ProductDetail({
+  PickleProductDetail({
     required this.categoryName,
     required this.productName,
     required this.imageUrl,
@@ -21,10 +21,10 @@ class ProductDetail extends StatefulWidget {
   });
 
   @override
-  State<ProductDetail> createState() => _ProductDetailState();
+  State<PickleProductDetail> createState() => _PickleProductDetailState();
 }
 
-class _ProductDetailState extends State<ProductDetail> {
+class _PickleProductDetailState extends State<PickleProductDetail> {
   bool isFav = true;
   bool isToggled1 = false;
   bool isToggled2 = false;
@@ -146,7 +146,7 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
           child: Center(
             child: Row(
-                //yıldızlar
+              //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
@@ -167,7 +167,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           isToggled2 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled2 ? Colors.yellow : Colors.black,
                         ),
-                          onPressed: toggleIconButton2,
+                        onPressed: toggleIconButton2,
                       ),
                     ),
                   ),
@@ -178,7 +178,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
-                          onPressed: toggleIconButton3,
+                        onPressed: toggleIconButton3,
                       ),
                     ),
                   ),
@@ -322,7 +322,7 @@ class _ProductDetailState extends State<ProductDetail> {
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PRODUCT_LABEL);
+                      .pushNamed(Constants.ROUTE_PLI);
                 },
                 child: Container(
                   child: Center(
@@ -396,7 +396,7 @@ class _ProductDetailState extends State<ProductDetail> {
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PRODUCT_NVALUES);
+                      .pushNamed(Constants.ROUTE_PNV);
                 },
                 child: Container(
                   child: Center(
@@ -464,7 +464,7 @@ class _ProductDetailState extends State<ProductDetail> {
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PRODUCT_HEALTHYC);
+                      .pushNamed(Constants.ROUTE_PHC);
                 },
                 child: Container(
                   child: Center(
@@ -532,7 +532,7 @@ class _ProductDetailState extends State<ProductDetail> {
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PRODUCT_RECIPEREC);
+                      .pushNamed(Constants.ROUTE_PRR);
                 },
                 child: Container(
                   child: Center(

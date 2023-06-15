@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Smart Eat',
+      title: 'SMEAT',
       theme: ThemeData(
         primarySwatch: Colors.lightBlue, //white
       ),

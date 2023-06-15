@@ -30,7 +30,7 @@ class RecipeRecWidget extends StatelessWidget {
         SizedBox(height: 5.0),
         Center(
           child: Container(
-            width: 175,
+            width: 250,
             height: 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
@@ -42,7 +42,7 @@ class RecipeRecWidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 16.0,
+                fontSize: 20.0,
               ),
             ),
           ),
@@ -69,7 +69,7 @@ class RecipeRecWidget extends StatelessWidget {
   _buildCategoryName(BuildContext context) {
     return Center(
       child: Container(
-        width: 250,
+        width: 350,
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -81,7 +81,7 @@ class RecipeRecWidget extends StatelessWidget {
             style: TextStyle(
               color: Colors.grey,
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 25,
             ),
           ),
         ),
@@ -93,8 +93,8 @@ class RecipeRecWidget extends StatelessWidget {
     return ClipOval(
       child: Container(
         alignment: Alignment.topCenter,
-        width: 80,
-        height: 80,
+        width: 150,
+        height: 150,
         decoration: BoxDecoration(
           border: Border.all(
             width: 3.0,
@@ -113,8 +113,8 @@ class RecipeRecWidget extends StatelessWidget {
   _buildProductName(BuildContext context) {
     return Center(
       child: Container(
-        width: 100,
-        height: 20,
+        width: 150,
+        height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: Colors.white60,
@@ -125,7 +125,7 @@ class RecipeRecWidget extends StatelessWidget {
             style: TextStyle(
               color: Colors.grey,
               fontWeight: FontWeight.bold,
-              fontSize: 14,
+              fontSize: 20,
             ),
           ),
         ),
@@ -143,12 +143,12 @@ class RecipeRecWidget extends StatelessWidget {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Constants.ROUTE_SUTLAC);
+                  Navigator.of(context).pushNamed(recipe.route);
                 },
                 child: Container(
                   alignment: Alignment.topCenter,
-                  width: 100,
-                  height: 100,
+                  width: 130,
+                  height: 130,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 3.0,
@@ -165,7 +165,7 @@ class RecipeRecWidget extends StatelessWidget {
               ),
             ),
             Container(
-              width: 80,
+              width: 130,
               height: 40,
               decoration: BoxDecoration(
                 color: Colors.white60,
@@ -205,8 +205,8 @@ class RecipeRecWidget extends StatelessWidget {
                 ),
               ),
               alignment: Alignment.topCenter,
-              width: 100,
-              height: 100,
+              width: 130,
+              height: 130,
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 5,
@@ -218,8 +218,8 @@ class RecipeRecWidget extends StatelessWidget {
           ),
         ),
         Container(
-          width: 100,
-          height: 40,
+          width: 110,
+          height: 50,
           decoration: BoxDecoration(
             color: Colors.white60,
             borderRadius: BorderRadius.circular(10),
@@ -242,9 +242,11 @@ class RecipeRecWidget extends StatelessWidget {
 class Recipe {
   String recipeName;
   String recipeImage;
+  String route;
 
   Recipe({
     required this.recipeName,
     required this.recipeImage,
+    required this.route,
   });
 }

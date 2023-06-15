@@ -27,11 +27,16 @@ class CategoryDetailWidget extends StatelessWidget {
       List<Product> rowProducts = products.sublist(i, endIndex);
 
       productRows.add(
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: rowProducts.map((product) {
-            return _buildCategoryProduct(context, product);
-          }).toList(),
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: rowProducts.map((product) {
+                return _buildCategoryProduct(context, product);
+              }).toList(),
+            ),
+            SizedBox(height: 20),
+          ],
         ),
       );
 
@@ -39,19 +44,19 @@ class CategoryDetailWidget extends StatelessWidget {
     return Column(
       children: <Widget>[
         SizedBox(
-          height: 5.0,
+          height: 10.0,
         ),
         _buildCategoryTitle(),
         SizedBox(
-          height: 5.0,
+          height: 10.0,
         ),
         _buildCategoryImage(),
         SizedBox(
-          height: 5.0,
+          height: 15.0,
         ),
         _buildCategoryInfo(),
         SizedBox(
-          height: 10.0,
+          height: 20.0,
         ),
         Column(
           children: productRows,
@@ -109,7 +114,7 @@ class CategoryDetailWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       width: 300,
-      height: 150,
+      height: 200,
       alignment: Alignment.topCenter,
       child: SingleChildScrollView(
         child: Text(
@@ -131,8 +136,8 @@ class CategoryDetailWidget extends StatelessWidget {
       },
       child: Container(
         alignment: Alignment.bottomCenter,
-        width: 80,
-        height: 80,
+        width: 90,
+        height: 95,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: Colors.blue.withOpacity(0.5),
@@ -151,7 +156,7 @@ class CategoryDetailWidget extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                width: 80,
+                width: 90,
                 height: 30,
                 decoration: BoxDecoration(
                   color: Colors.white,
