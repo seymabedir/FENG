@@ -78,9 +78,9 @@ class FishRR extends StatelessWidget {
       productName: "BALIK",
       recipes: [
         Recipe(
-          recipeName: "TARİF",
-          recipeImage: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
-          route: "",
+          recipeName: "HAMSİLİ PİLAV",
+          recipeImage: "https://cdn.yemek.com/mnresize/1250/833/uploads/2022/12/hamsili-pilav-yemekcom.jpg",
+          route: Constants.ROUTE_HAMSILI_PILAV,
         ),
       ],
     );

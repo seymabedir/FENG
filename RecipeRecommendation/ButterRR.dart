@@ -78,9 +78,9 @@ class ButterRR extends StatelessWidget {
       productName: "TEREYAĞI",
       recipes: [
         Recipe(
-          recipeName: "TARİF",
-          recipeImage: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
-          route: "",
+          recipeName: "DÜŞES PATATES",
+          recipeImage: "https://i.elmaelma.com/storage/files/2015/11/9/35649/35649_0.jpg",
+          route: Constants.ROUTE_DUSES_PATATES,
         ),
       ],
     );

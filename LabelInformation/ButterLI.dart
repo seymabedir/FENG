@@ -81,12 +81,8 @@ class ButterLI extends StatelessWidget {
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
       imageUrl: "https://img.freepik.com/free-photo/top-view-two-slices-rye-dry-bread-as-toast-with-butter-breakfast-with-vintage-knife-it-everything-craft-paper_346278-650.jpg?w=996&t=st=1686232316~exp=1686232916~hmac=c820138b44a5903c0bed58f6a54c19e3f5b8661a92360a4c26d857bb6099033d",
       productName: "TEREYAĞI",
-      productInfo: "Tam yağlu süt."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "\n En az %80 süt yağı içerir. "
+          "\n İçindekiler: Pastorize Inek Sütü Kreması, Tereyağı Kültürü, Tuz (maksimum 962). Alerjen Uyansı: Süt ürünüdür. En fazla +4°C'de muhafaza ediniz. Son Tüketim Tarihi (S.T.T.) ve Parti No ambalaj üzerinde olup Son Tüketim Tarihinden önce tüketilmelidir.",
     );
   }
 

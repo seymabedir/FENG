@@ -75,12 +75,7 @@ class FishNV extends StatelessWidget {
       categoryName: "DENİZ ÜRÜNLERİ",
       imageUrl: "https://img.freepik.com/free-photo/side-view-fresh-raw-fishes-brown-wooden-cutting-board-dark-mix-colors-table-with-free-space_179666-18208.jpg?w=996&t=st=1686237371~exp=1686237971~hmac=f976878adf6b5a0dc9edc8c483ca03afff24917d2e39438740e3b4b18e8450c8",
       productName: "BALIK",
-      productInfo: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "1 Porsiyon (Orta) Balık 164,00 kaloridir. Balık içeriğinde 36,60 Protein(g), 1,79 yağ(g), 172,00 Sodyum(mg), 712,00 potasyum(mg), 28,00 Kalsiyum(mg), 22,00 A Vitamini(ui), 2,00 C Vitamini(mg), 1,00 ve Demir barındırır.",
     );
   }
 }

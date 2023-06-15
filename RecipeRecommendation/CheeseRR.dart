@@ -78,9 +78,9 @@ class CheeseRR extends StatelessWidget {
       productName: "PEYNİR",
       recipes: [
         Recipe(
-          recipeName: "TARİF",
-          recipeImage: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
-          route: "",
+          recipeName: "ÇITIR PEYNİR ÇUBUKLARI",
+          recipeImage: "https://cdn.yemek.com/mncrop/940/625/uploads/2016/09/citir-kasar-peyniri-cubuklari-tarifi.jpg",
+          route: Constants.ROUTE_PEYNIR_CUBUKLARI,
         ),
       ],
     );

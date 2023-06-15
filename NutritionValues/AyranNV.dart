@@ -75,12 +75,14 @@ class AyranNV extends StatelessWidget {
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
       imageUrl: "https://img.freepik.com/free-photo/ayran-drink-with-mint-cucumber-glass-wooden-table_123827-21428.jpg?w=996&t=st=1686232158~exp=1686232758~hmac=dfbd09bf4b19944fd01a4878e8cba36619c0d8a3481c0d692644a6642ddf601d",
       productName: "AYRAN",
-      productInfo: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "\n 100ml için : "
+          "\n Enerji (kJ/kcal) - 153/37 "
+          "\n Yağ (g) - 1.6 "
+          "\n Doymuş yağ (g) - 1.1 "
+          "\n Karbonhidrat (g) - 3.1 "
+          "\n Şekerler (g) - 2 "
+          "\n Tuz (g) - 2 "
+          "\n Protein (g) - 0.7",
     );
   }
 }

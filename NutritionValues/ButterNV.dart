@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
-import 'package:project/widgets/LabelInfoWidget.dart';
+import 'package:project/widgets/NutritionValuesWidget.dart';
 
-class AyranLI extends StatelessWidget {
-  const AyranLI({Key? key}) : super(key: key);
+class ButterNV extends StatelessWidget {
+  const ButterNV({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -66,28 +66,25 @@ class AyranLI extends StatelessWidget {
           ),
         ),
       ),
-      body: _buildLabelInfo(),
+      body: _buildNutriValues(),
     );
   }
 
-
-
-  _buildLabelInfo() {
-    return _Label();
-  }
-
-  _Label() {
-    return LabelInfoWidget(
+  _buildNutriValues() {
+    return NutritionValuesWidget(
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "https://img.freepik.com/free-photo/ayran-drink-with-mint-cucumber-glass-wooden-table_123827-21428.jpg?w=996&t=st=1686232158~exp=1686232758~hmac=dfbd09bf4b19944fd01a4878e8cba36619c0d8a3481c0d692644a6642ddf601d",
-      productName: "AYRAN",
-      productInfo: "Son tüketim tarihi (STT) kapaktadır. Son tüketim tarihinden önce tüketilmelidir.Parti seri no son tüketim tarihidir. (+3°C)-(+5°C)'de muhafaza ediniz."
-          "\n Içindekiler: Pastörize İnek Sütü, İçme Suyu,Yoğurt Mayası, Sofra Tuzu. Ağırlığınca en az %1,5 süt yağı ve en az %2 süt proteini içerir. En fazla %1 tuz içerir."
-          "\n STARTER KULTURU KULLANILMAMAKTADIR",
+      imageUrl: "https://img.freepik.com/free-photo/top-view-two-slices-rye-dry-bread-as-toast-with-butter-breakfast-with-vintage-knife-it-everything-craft-paper_346278-650.jpg?w=996&t=st=1686232316~exp=1686232916~hmac=c820138b44a5903c0bed58f6a54c19e3f5b8661a92360a4c26d857bb6099033d",
+      productName: "TEREYAĞI",
+      productInfo: "\n 100gram için : "
+          "\n Enerji (k ve kcal) - 3070/746 "
+          "\n Yağ (g) - 82 "
+          "\n Doymuş Yağ (g)- 58,4 "
+          "\n Karbonhidrat (g) - 1.4 "
+          "\n Şeker (g) - 1,4 "
+          "\n Protein (g) - 0,7 "
+          "\n Tuz (g) – 0 ",
     );
   }
-
-
 }
 
 

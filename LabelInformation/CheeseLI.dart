@@ -81,12 +81,7 @@ class CheeseLI extends StatelessWidget {
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
       imageUrl: "https://img.freepik.com/free-photo/delicious-pieces-cheese_144627-43352.jpg?w=900&t=st=1686232003~exp=1686232603~hmac=6207bbbd55a01f77855c857b0d440e233ced14f7f653b412bb856c5ac90e1dc6",
       productName: "PEYNİR",
-      productInfo: "Tam yağlu süt."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "İçindekiler: Pastörize inek sütü, peynir mayası, peynir kültürü, tuz. +4°C the 10°C  arasında muhafaza ediniz Türk Gıda Kodeksi Peynir Tebliğine uygundur. Son Tüketim Tarih (STT) yan yüzdedir.",
     );
   }
 

@@ -76,18 +76,23 @@ class FishHC extends StatelessWidget {
       categoryName: "DENİZ ÜRÜNLERİ",
       imageUrl: "https://img.freepik.com/free-photo/side-view-fresh-raw-fishes-brown-wooden-cutting-board-dark-mix-colors-table-with-free-space_179666-18208.jpg?w=996&t=st=1686237371~exp=1686237971~hmac=f976878adf6b5a0dc9edc8c483ca03afff24917d2e39438740e3b4b18e8450c8",
       productName: "BALIK",
-      productInfo: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
-      condition: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "Deniz ürünlerinde bulunabilecek patojenler "
+          "\n •	Vibrio "
+          "\n •	Salmonella "
+          "\n •	Listeria "
+          "\n •	Shigella "
+          "\n •	Staphylococcus "
+          "\n •	Clostridium "
+          "\n •	Escherichia coli  "
+          "\n Korunma yolları: Deniz ürünlerini 4°C'nin altındaki saklamak patojenik bakterilerin büyümesini önlemek için önemlidir. Uygun ve yeterli pişirme bu bakterileri yok edebilmektedir. Hijyen kurallarına dikkat edilmesi de oldukça önemlidir. "
+          "\n Çapraz bulaşma; kesme tahtaları, mutfak eşyaları veya eller yardımıyla patojenik bakterilerin bir gıdadan diğerine aktarılmasıdır. Deniz ürünleri işlenirken çapraz bulaşının önlenmesi için çiğ deniz ürünleri ve meyve suları önceden pişirilmiş veya yemeye hazır yemeklerden ayrı tutulmalıdır.",
+      condition: "Dikkat edilmesi gerekenler; "
+          "\n •	Sık sık elleri, kapları ve pişirme yüzeylerini yıkamak, "
+          "\n •	Deniz ürünlerini minimum 63°C’de 15 saniye boyunca pişirmek, "
+          "\n •	Çapraz kontaminasyonu önlemek için çiğ ve pişmiş deniz ürünlerini ayrı tutmak ve "
+          "\n •	Deniz ürünlerini 4°C'nin altındaki buzdolabında veya -15°C'nin altındaki derin dondurucuda saklamak. "
+          "\n Semptomlar : "
+          "\n Uyuşma ve karıncalanma, baş ağrısı, karın ağrısı, mide bulantısı, kusma, ishal ve bilinç kaybı zehirlenme durumunda karşılaşılan durumlardandır.",
 
     );
   }

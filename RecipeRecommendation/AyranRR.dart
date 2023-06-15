@@ -78,9 +78,9 @@ class AyranRR extends StatelessWidget {
       productName: "AYRAN",
       recipes: [
         Recipe(
-          recipeName: "TARİF",
-          recipeImage: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
-          route: "",
+          recipeName: "AYRANLI PİŞİ",
+          recipeImage: "https://picniconabroom.com/wp-content/uploads/2021/08/pisi-Turkish-fried-bread-7.jpg",
+          route: Constants.ROUTE_PISI,
         ),
       ],
     );
