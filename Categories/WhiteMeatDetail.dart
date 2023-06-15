@@ -29,39 +29,46 @@ class _WhiteMeatDetailState extends State<WhiteMeatDetail> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Color.fromRGBO(200, 235, 254, 10),
-          height: kToolbarHeight,
+          color: const Color.fromRGBO(200, 235, 254, 10),
+          height: 80,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined,
-                  color: Colors.black,
+                icon: const Icon(
+                  Icons.home_outlined,
+                  size: 42,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.dataset_outlined,
-                  color: Colors.grey,
-                ),
+                icon: const Icon(Icons.dataset_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
+              SizedBox(width: 8,),
             ],
           ),
         ),
@@ -80,7 +87,7 @@ class _WhiteMeatDetailState extends State<WhiteMeatDetail> {
     return CategoryDetailWidget(
       title: "BEYAZ ET",
       imageUrl: "https://img.freepik.com/free-photo/raw-chicken-fillet-with-garlic-pepper-rosemary-wooden-chopping-board_1150-37785.jpg?w=996&t=st=1686239310~exp=1686239910~hmac=4c8a803efa266f04e0f5ebd3953e768e5a054faed2206bc627ef68eb2d391b27",
-      info: "Beyaz et, tavuk eti, ördek eti, kaz eti, horoz eti ve hindi eti gibi kümes hayvanlarıyla birlikte birçok deniz ürününü (örn. balık eti, yengeç eti, ahtapot eti ve kalamar eti) de içerisine alan bir sınıflandırmadır.[1] Kırmızı etten farklı, miyoglobin yoktur.[2] İsmini pişirilmeden önceki soluk veya açık renginden almaktadır.",
+      info: "Beyaz et, tavuk eti, ördek eti, kaz eti, horoz eti ve hindi eti gibi kümes hayvanlarıyla birlikte birçok deniz ürününü (örn. balık eti, yengeç eti, ahtapot eti ve kalamar eti) de içerisine alan bir sınıflandırmadır. Kırmızı etten farklı, miyoglobin yoktur. İsmini pişirilmeden önceki soluk veya açık renginden almaktadır.",
       products: [
         Product(
           title: "TAVUK",

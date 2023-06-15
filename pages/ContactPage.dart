@@ -26,37 +26,46 @@ class _ContactPageState extends State<ContactPage> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Color.fromRGBO(200, 235, 254, 10),
-          height: kToolbarHeight,
+          color: const Color.fromRGBO(200, 235, 254, 10),
+          height: 80,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined,
-                  color: Colors.black,
+                icon: const Icon(
+                  Icons.home_outlined,
+                  size: 42,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.dataset_outlined),
+                icon: const Icon(Icons.dataset_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
+              SizedBox(width: 8,),
             ],
           ),
         ),
@@ -67,12 +76,12 @@ class _ContactPageState extends State<ContactPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Communication Information:',
+              'İletişim Bilgileri:',
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             Text(
-              'For any inquiries or assistance, please reach out to us:',
+              'Sorularınız veya destek için lütfen bize ulaşın:',
               style: TextStyle(fontSize: 16.0),
             ),
             SizedBox(height: 16.0),
@@ -82,18 +91,17 @@ class _ContactPageState extends State<ContactPage> {
             ),
             SizedBox(height: 8.0),
             Text(
-              'Phone: +1234567890',
+              'Telefon: +1234567890',
               style: TextStyle(fontSize: 16.0),
             ),
             SizedBox(height: 16.0),
             Text(
-              'Links:',
+              'Linkler:',
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             GestureDetector(
               onTap: () {
-                // Implement logic to open a link when tapped
               },
               child: Text(
                 'Website',
@@ -107,7 +115,6 @@ class _ContactPageState extends State<ContactPage> {
             SizedBox(height: 8.0),
             GestureDetector(
               onTap: () {
-                // Implement logic to open a link when tapped
               },
               child: Text(
                 'Social Media',

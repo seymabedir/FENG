@@ -41,37 +41,46 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Color.fromRGBO(200, 235, 254, 10),
-          height: kToolbarHeight,
+          color: const Color.fromRGBO(200, 235, 254, 10),
+          height: 80,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined,
-                  color: Colors.black,
+                icon: const Icon(
+                  Icons.home_outlined,
+                  size: 42,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.dataset_outlined),
+                icon: const Icon(Icons.dataset_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
+              SizedBox(width: 8,),
             ],
           ),
         ),
@@ -79,21 +88,21 @@ class _SettingsPageState extends State<SettingsPage> {
       body: ListView(
         children: [
           ListTile(
-            title: Text('Notifications'),
+            title: Text('Bildirimler'),
             trailing: Switch(
               value: _enableNotifications,
               onChanged: _toggleNotifications,
             ),
           ),
           ListTile(
-            title: Text('Dark Mode'),
+            title: Text('Koyu Mod'),
             trailing: Switch(
               value: _enableDarkMode,
               onChanged: _toggleDarkMode,
             ),
           ),
           ListTile(
-            title: Text('Language'),
+            title: Text('Dil Seçenekleri'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
               Navigator.pushNamed(context, '/language');

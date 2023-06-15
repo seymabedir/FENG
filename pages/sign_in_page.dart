@@ -21,17 +21,29 @@ class SignInPage extends ConsumerWidget {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: Column(
+              child: Stack(
                 children: [
                 Center(
-                      child: Image.asset('images/logo.png'),
+                      child: Container(
+                        width: 800,
+                          height: 900,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('images/splash.png'),
+                              fit: BoxFit.fitWidth,
+                            )
+                          ),
+                      ),
                     ),
-                  const GoogleSignInButton(),
+                  Positioned(
+                    bottom: 360,
+                      left: 60,
+                      child: Center(
+                          child: const GoogleSignInButton()
+                      )
+                  ),
                   ],
-
-              ),
+              //),
             ),
           ),
         ),

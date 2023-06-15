@@ -26,37 +26,46 @@ class _HelpPageState extends State<HelpPage> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Color.fromRGBO(200, 235, 254, 10),
-          height: kToolbarHeight,
+          color: const Color.fromRGBO(200, 235, 254, 10),
+          height: 80,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined,
-                  color: Colors.black,
+                icon: const Icon(
+                  Icons.home_outlined,
+                  size: 42,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.dataset_outlined),
+                icon: const Icon(Icons.dataset_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
+              SizedBox(width: 8,),
             ],
           ),
         ),
@@ -67,39 +76,20 @@ class _HelpPageState extends State<HelpPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Tips:',
+              'Yardımcı Olabilecek Bilgiler :',
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8.0),
             Text(
-              '- Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              '- Ürünleri favorilerinize eklemek için kalp ikonuna tıklamanız yeterli.',
               style: TextStyle(fontSize: 16.0),
             ),
             SizedBox(height: 8.0),
             Text(
-              '- Ut in lacus eu ligula commodo sagittis.',
+              '- Ürünleri favoriler listenizden çıkartmak için kırmızı olan kalp ikonuna tıklayınız.',
               style: TextStyle(fontSize: 16.0),
             ),
             SizedBox(height: 16.0),
-            Text(
-              'Communication Information:',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              'For any inquiries or assistance, please reach out to us:',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              'Email: example@example.com',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            SizedBox(height: 8.0),
-            Text(
-              'Phone: +1234567890',
-              style: TextStyle(fontSize: 16.0),
-            ),
           ],
         ),
       ),

@@ -27,7 +27,7 @@ class HomePage extends ConsumerWidget {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           color: const Color.fromRGBO(200, 235, 254, 10),
-          height: kToolbarHeight,
+          height: 80,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -35,29 +35,38 @@ class HomePage extends ConsumerWidget {
                 icon: const Icon(
                   Icons.home_outlined,
                   color: Colors.grey,
+                  size: 42,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: const Icon(Icons.search),
+                icon: const Icon(Icons.search,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined),
+                icon: const Icon(Icons.dataset_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
+              SizedBox(width: 8,),
             ],
           ),
         ),
@@ -172,11 +181,10 @@ class HomePage extends ConsumerWidget {
                   height: 5.0,
                 ),
                 Container(
-                  //
                   height: 60.0,
                   color: Colors.white,
                   child: ListTile(
-                    leading: const Icon(Icons.view_stream_outlined,
+                    leading: const Icon(Icons.exit_to_app,
                         color: Colors.black87),
                     title: const Text('Çıkış'),
                     onTap: () async {
@@ -200,9 +208,6 @@ class HomePage extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: [
-            const SizedBox(
-              height: 10.0,
-            ),
             SizedBox(
               width: 300,
               child: InkWell(
@@ -254,7 +259,7 @@ class HomePage extends ConsumerWidget {
               },
               child: Container(
                 width: 300,
-                height: 100,
+                height: 150,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 3.0,
@@ -272,7 +277,7 @@ class HomePage extends ConsumerWidget {
                   child: Text(
                     '\n ÖNERİLER',
                     style: TextStyle(
-                      fontSize: 23,
+                      fontSize: 25,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),

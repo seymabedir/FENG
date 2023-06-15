@@ -41,37 +41,47 @@ class _SearchPageState extends State<SearchPage> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: Color.fromRGBO(200, 235, 254, 10),
-          height: kToolbarHeight,
+          color: const Color.fromRGBO(200, 235, 254, 10),
+          height: 80,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Icon(Icons.home_outlined),
+                icon: const Icon(
+                  Icons.home_outlined,
+                  size: 42,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.search,
-                color: Colors.grey,
+                icon: const Icon(Icons.search,
+                  color: Colors.grey,
+                  size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.favorite_border_outlined),
+                icon: const Icon(Icons.favorite_border_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
+              SizedBox(width: 8,),
               IconButton(
-                icon: Icon(Icons.dataset_outlined),
+                icon: const Icon(Icons.dataset_outlined,
+                  size: 40,),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
+              SizedBox(width: 8,),
             ],
           ),
         ),
@@ -108,18 +118,6 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ),
         ),
-        /*Expanded(
-          child: ListView.builder(
-            itemCount: 20,
-            // Replace with the actual number of items in your search results
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('Item $index'),
-                // Implement your item widget here
-              );
-            },
-          ),
-        ),*/
       ),
       ]
       ),
