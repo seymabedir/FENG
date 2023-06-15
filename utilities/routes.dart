@@ -35,7 +35,7 @@ import 'package:project/LabelInformation/ShrimpLI.dart';
 import 'package:project/LabelInformation/WhiteMeatLI.dart';
 import 'package:project/LabelInformation/YoghurtLI.dart';
 import 'package:project/NutritionValues/AyranNV.dart';
-import 'package:project/NutritionValues/ButterLI.dart';
+import 'package:project/NutritionValues/ButterNV.dart';
 import 'package:project/NutritionValues/CheeseNV.dart';
 import 'package:project/NutritionValues/CrabNV.dart';
 import 'package:project/NutritionValues/FishNV.dart';
@@ -85,6 +85,10 @@ import 'package:project/RecipeRecommendation/RedMeatRR.dart';
 import 'package:project/RecipeRecommendation/ShrimpRR.dart';
 import 'package:project/RecipeRecommendation/WhiteMeatRR.dart';
 import 'package:project/RecipeRecommendation/YoghurtRR.dart';
+import 'package:project/Recipes/AyranliPisi.dart';
+import 'package:project/Recipes/DusesPatates.dart';
+import 'package:project/Recipes/HamsiliPilav.dart';
+import 'package:project/Recipes/PeynirCubuklari.dart';
 import 'package:project/Recipes/Pudding.dart';
 import 'package:project/pages/home_page.dart';
 import 'package:project/pages/EnterItem.dart';
@@ -168,9 +172,8 @@ class Routes {
     Constants.ROUTE_FRUITJUICE:(BuildContext context)=> const FruitJuiceProductDetail(),
     Constants.ROUTE_PICKLE:(BuildContext context)=> const PickleDetail(),
     Constants.ROUTE_JAM:(BuildContext context)=> const JamDetail(),
-    Constants.ROUTE_SUTLAC:(BuildContext context)=> const Sutlac(),
     Constants.ROUTE_ENTER_ITEM:(BuildContext context)=> const EnterItem(),
-    Constants.ROUTE_PUDDING: (BuildContext context)=> const Pudding(),
+
     // Red Meat
     Constants.ROUTE_RMLI: (BuildContext context)=> const RedMeatLI(),
     Constants.ROUTE_RMNV: (BuildContext context)=> const RedMeatNV(),
@@ -257,6 +260,13 @@ class Routes {
     Constants.ROUTE_YHC: (BuildContext context)=> const YoghurtHC(),
     Constants.ROUTE_YRR: (BuildContext context)=> const YoghurtRR(),
 
+    //Tarifler
+    Constants.ROUTE_PUDDING: (BuildContext context)=> const Pudding(),
+    Constants.ROUTE_SUTLAC:(BuildContext context)=> const Sutlac(),
+    Constants.ROUTE_PISI:(BuildContext context)=> const AyranliPisi(),
+    Constants.ROUTE_DUSES_PATATES:(BuildContext context)=> const DusesPatates(),
+    Constants.ROUTE_PEYNIR_CUBUKLARI:(BuildContext context)=> const PeynirCubuklari(),
+    Constants.ROUTE_HAMSILI_PILAV:(BuildContext context)=> const HamsiliPilav(),
 
   };
 }

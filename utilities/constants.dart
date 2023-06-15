@@ -47,9 +47,8 @@ class Constants {
   static const String ROUTE_PICKLE = "/PickleDetail";
   static const String ROUTE_JAM = "/JamDetail";
   static const String ROUTE_MILKHC = "/MilkHC";
-  static const String ROUTE_SUTLAC = "/Sutlac";
   static const String ROUTE_ENTER_ITEM = "/EnterItem";
-  static const String ROUTE_PUDDING = "/Puding";
+
 // Red Meat
   static const String ROUTE_RMLI = "/RedMeatLI";
   static const String ROUTE_RMNV = "/RedMeatNV";
@@ -135,6 +134,14 @@ class Constants {
   static const String ROUTE_YNV = "/YoghurtNV";
   static const String ROUTE_YHC = "/YoghurtHC";
   static const String ROUTE_YRR = "/YoghurtRR";
+
+//Tarifler
+  static const String ROUTE_PUDDING = "/Puding";
+  static const String ROUTE_SUTLAC = "/Sutlac";
+  static const String ROUTE_PISI = "/AyranliPisi";
+  static const String ROUTE_DUSES_PATATES = "/DusesPatates";
+  static const String ROUTE_PEYNIR_CUBUKLARI = "/PeynirCubuklari";
+  static const String ROUTE_HAMSILI_PILAV = "/HamsiliPilav";
 
 
 }
