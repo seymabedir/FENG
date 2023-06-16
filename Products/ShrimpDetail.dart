@@ -41,32 +41,45 @@ class _ShrimpDetailState extends State<ShrimpDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -84,7 +97,7 @@ class _ShrimpDetailState extends State<ShrimpDetail> {
       categoryName: "DENİZ ÜRÜNLERİ",
       productName: "KARİDES",
       imageUrl:
-      "https://img.freepik.com/free-photo/two-tail-shrimp-with-fresh-lemon-rosemary-white_2829-18146.jpg?w=740&t=st=1686237608~exp=1686238208~hmac=b803acfdd4c2f27f32e6ec6adb7dd779ada3cb46263609a262d499c5b8990707",
+          "https://img.freepik.com/free-photo/two-tail-shrimp-with-fresh-lemon-rosemary-white_2829-18146.jpg?w=740&t=st=1686237608~exp=1686238208~hmac=b803acfdd4c2f27f32e6ec6adb7dd779ada3cb46263609a262d499c5b8990707",
       avgRate: 3,
     );
   }

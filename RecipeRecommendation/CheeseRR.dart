@@ -37,32 +37,45 @@ class CheeseRR extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -79,7 +92,8 @@ class CheeseRR extends StatelessWidget {
       recipes: [
         Recipe(
           recipeName: "ÇITIR PEYNİR ÇUBUKLARI",
-          recipeImage: "https://cdn.yemek.com/mncrop/940/625/uploads/2016/09/citir-kasar-peyniri-cubuklari-tarifi.jpg",
+          recipeImage:
+              "https://cdn.yemek.com/mncrop/940/625/uploads/2016/09/citir-kasar-peyniri-cubuklari-tarifi.jpg",
           route: Constants.ROUTE_PEYNIR_CUBUKLARI,
         ),
       ],

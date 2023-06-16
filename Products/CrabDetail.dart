@@ -41,32 +41,45 @@ class _CrabDetailState extends State<CrabDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -84,7 +97,7 @@ class _CrabDetailState extends State<CrabDetail> {
       categoryName: "DENİZ ÜRÜNLERİ",
       productName: "YENGEÇ",
       imageUrl:
-      "https://img.freepik.com/free-photo/steamed-crabs_1387-220.jpg?w=996&t=st=1686237522~exp=1686238122~hmac=2466a3a0a554757356382c819006a6601437b33b2c1048ee246e2f21ee833bf4",
+          "https://img.freepik.com/free-photo/steamed-crabs_1387-220.jpg?w=996&t=st=1686237522~exp=1686238122~hmac=2466a3a0a554757356382c819006a6601437b33b2c1048ee246e2f21ee833bf4",
       avgRate: 3,
     );
   }

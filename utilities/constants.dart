@@ -54,81 +54,97 @@ class Constants {
   static const String ROUTE_RMNV = "/RedMeatNV";
   static const String ROUTE_RMHC = "/RedMeatHC";
   static const String ROUTE_RMRR = "/RedMeatRR";
+
 // Ayran
   static const String ROUTE_ALI = "/AyranLI";
   static const String ROUTE_ANV = "/AyranNV";
   static const String ROUTE_AHC = "/AyranHC";
   static const String ROUTE_ARR = "/AyranRR";
+
 // Butter
   static const String ROUTE_BLI = "/ButterLI";
   static const String ROUTE_BNV = "/ButterNV";
   static const String ROUTE_BHC = "/ButterHC";
   static const String ROUTE_BRR = "/ButterRR";
+
 // Cheese
   static const String ROUTE_CheeseLI = "/CheeseLI";
   static const String ROUTE_CheeseNV = "/CheeseNV";
   static const String ROUTE_CheeseHC = "/CheeseHC";
   static const String ROUTE_CheeseRR = "/CheeseRR";
+
 // Crab
   static const String ROUTE_CrabLI = "/CrabLI";
   static const String ROUTE_CrabNV = "/CrabNV";
   static const String ROUTE_CrabHC = "/CrabHC";
   static const String ROUTE_CrabRR = "/CrabRR";
+
 // Fish
   static const String ROUTE_FLI = "/FishLI";
   static const String ROUTE_FNV = "/FishNV";
   static const String ROUTE_FHC = "/FishHC";
   static const String ROUTE_FRR = "/FishRR";
+
 // FruitJuice
   static const String ROUTE_FJLI = "/FruitJuiceLI";
   static const String ROUTE_FJNV = "/FruitJuiceNV";
   static const String ROUTE_FJHC = "/FruitJuiceHC";
   static const String ROUTE_FJRR = "/FruitJuiceRR";
+
 // Ice Cream
   static const String ROUTE_ICLI = "/IceCreamLI";
   static const String ROUTE_ICNV = "/IceCreamNV";
   static const String ROUTE_ICHC = "/IceCreamHC";
   static const String ROUTE_ICRR = "/IceCreamRR";
+
 // Jam
   static const String ROUTE_JLI = "/JamLI";
   static const String ROUTE_JNV = "/JamNV";
   static const String ROUTE_JHC = "/JamHC";
   static const String ROUTE_JRR = "/JamRR";
+
 // Ketchup
   static const String ROUTE_KLI = "/KetchupLI";
   static const String ROUTE_KNV = "/KetchupNV";
   static const String ROUTE_KHC = "/KetchupHC";
   static const String ROUTE_KRR = "/KetchupRR";
+
 // Lobster
   static const String ROUTE_LLI = "/LobsterLI";
   static const String ROUTE_LNV = "/LobsterNV";
   static const String ROUTE_LHC = "/LobsterHC";
   static const String ROUTE_LRR = "/LobsterRR";
+
 // Mayonnaise
   static const String ROUTE_MayoLI = "/MayonnaiseLI";
   static const String ROUTE_MayoNV = "/MayonnaiseNV";
   static const String ROUTE_MayoHC = "/MayonnaiseHC";
   static const String ROUTE_MayoRR = "/MayonnaiseRR";
+
 // Mussel
   static const String ROUTE_MusLI = "/MusselLI";
   static const String ROUTE_MusNV = "/MusselNV";
   static const String ROUTE_MusHC = "/MusselHC";
   static const String ROUTE_MusRR = "/MusselRR";
+
 // Pickle
   static const String ROUTE_PLI = "/PickleLI";
   static const String ROUTE_PNV = "/PickleNV";
   static const String ROUTE_PHC = "/PickleHC";
   static const String ROUTE_PRR = "/PickleRR";
+
 // Shrimp
   static const String ROUTE_SLI = "/ShrimpLI";
   static const String ROUTE_SNV = "/ShrimpNV";
   static const String ROUTE_SHC = "/ShrimpHC";
   static const String ROUTE_SRR = "/ShrimpRR";
+
 // White Meat
   static const String ROUTE_WMLI = "/WhiteMeatLI";
   static const String ROUTE_WMNV = "/WhiteMeatNV";
   static const String ROUTE_WMHC = "/WhiteMeatHC";
   static const String ROUTE_WMRR = "/WhiteMeatRR";
+
 // Yoghurt
   static const String ROUTE_YLI = "/YoghurtLI";
   static const String ROUTE_YNV = "/YoghurtNV";
@@ -142,6 +158,7 @@ class Constants {
   static const String ROUTE_DUSES_PATATES = "/DusesPatates";
   static const String ROUTE_PEYNIR_CUBUKLARI = "/PeynirCubuklari";
   static const String ROUTE_HAMSILI_PILAV = "/HamsiliPilav";
-
-
+  static const String ROUTE_MEYVESULU_MUHALLEBI = "/MeyveSuluMuhallebi";
+  static const String ROUTE_KIZARMIS_DONDURMA = "/KizarmisDondurma";
+  static const String ROUTE_KETCAP = "/Ketcap";
 }

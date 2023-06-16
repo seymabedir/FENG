@@ -41,32 +41,45 @@ class _JamDetailState extends State<JamDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -84,7 +97,7 @@ class _JamDetailState extends State<JamDetail> {
       categoryName: "KONSERVE GIDALAR",
       productName: "REÇEL",
       imageUrl:
-      "https://img.freepik.com/free-photo/assortment-berry-jams-top-view_114579-11706.jpg?w=996&t=st=1686238155~exp=1686238755~hmac=a51c2f73a5f592f1952c89f7d80fb7d6bf7a26b516c1933d57f671b8c3e477e8",
+          "https://img.freepik.com/free-photo/assortment-berry-jams-top-view_114579-11706.jpg?w=996&t=st=1686238155~exp=1686238755~hmac=a51c2f73a5f592f1952c89f7d80fb7d6bf7a26b516c1933d57f671b8c3e477e8",
       avgRate: 3,
     );
   }

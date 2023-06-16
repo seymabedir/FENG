@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-
 class Pudding extends StatefulWidget {
   const Pudding({Key? key}) : super(key: key);
 
@@ -10,7 +9,6 @@ class Pudding extends StatefulWidget {
 }
 
 class _PuddingState extends State<Pudding> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,32 +40,45 @@ class _PuddingState extends State<Pudding> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -90,7 +101,8 @@ class _PuddingState extends State<Pudding> {
                   ),
                   borderRadius: BorderRadius.circular(100),
                   image: DecorationImage(
-                    image: NetworkImage("https://img.freepik.com/free-photo/high-angle-banana-chocolate-pudding_23-2148750299.jpg?w=826&t=st=1686268281~exp=1686268881~hmac=ea3795f799bc54aa671229fd9371eb841c432a2cc3d50962d4fb4d3874909b40"),
+                    image: NetworkImage(
+                        "https://img.freepik.com/free-photo/high-angle-banana-chocolate-pudding_23-2148750299.jpg?w=826&t=st=1686268281~exp=1686268881~hmac=ea3795f799bc54aa671229fd9371eb841c432a2cc3d50962d4fb4d3874909b40"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -118,7 +130,8 @@ class _PuddingState extends State<Pudding> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Text(" \n Tarifin Adı : Puding",
+                    child: Text(
+                      " \n Tarifin Adı : Puding",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                     ),
@@ -139,14 +152,15 @@ class _PuddingState extends State<Pudding> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Text(" \n Malzemeler : "
-                          "\n 1 litre süt "
-                          "\n 1 su bardağı toz şeker"
-                          "\n 3 yemek kaşığı kakao "
-                          "\n 2 dolu yemek kaşığı un "
-                          "\n 2 dolu yemek kaşığı nişasta "
-                          "\n 1 paket vanilya "
-                          "\n 1 yemek kaşığı tereyağı",
+                      child: Text(
+                        " \n Malzemeler : "
+                        "\n 1 litre süt "
+                        "\n 1 su bardağı toz şeker"
+                        "\n 3 yemek kaşığı kakao "
+                        "\n 2 dolu yemek kaşığı un "
+                        "\n 2 dolu yemek kaşığı nişasta "
+                        "\n 1 paket vanilya "
+                        "\n 1 yemek kaşığı tereyağı",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.w300),
@@ -172,13 +186,14 @@ class _PuddingState extends State<Pudding> {
                       height: 175,
                       width: 325,
                       child: SingleChildScrollView(
-                        child: Text(" \n Uygun bir tencereye, vanilya ve tereyağı hariç puding için gerekli olan diğer malzemeleri alalım. "
-                            "\n Orta ateşte, bir çırpma teli yardımıyla devamlı karıştırarak pişirmeye başlayalım. "
-                            "\n Kıvam alıp, göz göz olmaya başlayınca birkaç dakika daha karıştırarak pişirelim. "
-                            "\n Ateşten aldığımız pudingin içine vanilya ve tereyağı ilavesini yaparak, mikserle bir kaç dakika çırpalım. Burada tel çırpıcı da kullanabilirsiniz ancak mikser ile kıvamı daha güzel olacaktır. "
-                            "\n Hazır olan pudingi kepçe yardımı ile kaselere aktaralım. Ben kullandığım kaseler ile 4 kase elde ettim. "
-                            "\n Oda sıcaklığına gelen pudingimizi buzdolabına kaldırarak bir kaç saat dinlenmeye bırakalım. "
-                            "\n Güzelce dinlenen ve soğuyan pudinglerimizi dilediğimiz gibi süsleyerek servis edelim. Afiyet olsun.",
+                        child: Text(
+                          " \n Uygun bir tencereye, vanilya ve tereyağı hariç puding için gerekli olan diğer malzemeleri alalım. "
+                          "\n Orta ateşte, bir çırpma teli yardımıyla devamlı karıştırarak pişirmeye başlayalım. "
+                          "\n Kıvam alıp, göz göz olmaya başlayınca birkaç dakika daha karıştırarak pişirelim. "
+                          "\n Ateşten aldığımız pudingin içine vanilya ve tereyağı ilavesini yaparak, mikserle bir kaç dakika çırpalım. Burada tel çırpıcı da kullanabilirsiniz ancak mikser ile kıvamı daha güzel olacaktır. "
+                          "\n Hazır olan pudingi kepçe yardımı ile kaselere aktaralım. Ben kullandığım kaseler ile 4 kase elde ettim. "
+                          "\n Oda sıcaklığına gelen pudingimizi buzdolabına kaldırarak bir kaç saat dinlenmeye bırakalım. "
+                          "\n Güzelce dinlenen ve soğuyan pudinglerimizi dilediğimiz gibi süsleyerek servis edelim. Afiyet olsun.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.w300),
@@ -195,9 +210,6 @@ class _PuddingState extends State<Pudding> {
           ],
         ),
       ),
-
     );
   }
-
 }
-

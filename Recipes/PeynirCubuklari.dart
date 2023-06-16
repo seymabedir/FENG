@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-
 class PeynirCubuklari extends StatefulWidget {
   const PeynirCubuklari({Key? key}) : super(key: key);
 
@@ -10,7 +9,6 @@ class PeynirCubuklari extends StatefulWidget {
 }
 
 class _PeynirCubuklariState extends State<PeynirCubuklari> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,32 +40,45 @@ class _PeynirCubuklariState extends State<PeynirCubuklari> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -90,7 +101,8 @@ class _PeynirCubuklariState extends State<PeynirCubuklari> {
                   ),
                   borderRadius: BorderRadius.circular(100),
                   image: DecorationImage(
-                    image: NetworkImage("https://cdn.yemek.com/mncrop/940/625/uploads/2016/09/citir-kasar-peyniri-cubuklari-tarifi.jpg"),
+                    image: NetworkImage(
+                        "https://cdn.yemek.com/mncrop/940/625/uploads/2016/09/citir-kasar-peyniri-cubuklari-tarifi.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -118,7 +130,8 @@ class _PeynirCubuklariState extends State<PeynirCubuklari> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Text(" \n Tarifin Adı : Çıtır Peynir Çubukları",
+                    child: Text(
+                      " \n Tarifin Adı : Çıtır Peynir Çubukları",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                     ),
@@ -139,12 +152,13 @@ class _PeynirCubuklariState extends State<PeynirCubuklari> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Text(" \n Malzemeler : "
-                          "\n 250 gram kaşar peyniri "
-                          "\n 1 paket mısır cipsi"
-                          "\n 3 adet yumurta "
-                          "\n 4 yemek kaşığı mısır unu "
-                          "\n 4 su bardağı kızartma yağı ",
+                      child: Text(
+                        " \n Malzemeler : "
+                        "\n 250 gram kaşar peyniri "
+                        "\n 1 paket mısır cipsi"
+                        "\n 3 adet yumurta "
+                        "\n 4 yemek kaşığı mısır unu "
+                        "\n 4 su bardağı kızartma yağı ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.w300),
@@ -170,7 +184,8 @@ class _PeynirCubuklariState extends State<PeynirCubuklari> {
                       height: 175,
                       width: 325,
                       child: SingleChildScrollView(
-                        child: Text(" \n Su tencereye konur ve kaynamaya bırakılır. Kaynadıktan sonra içerisine pirinçler eklenir. Bir kapta yumurta, un ve yoğurdu karıştırılır. Karışım tencereye eklenir ve karıştırılır. Pişerken tercihe göre bir tutam kuru nane eklenebilir. 10 dakikaya yakın pişirdikten sonra ocak kapatılır ve tuz eklenir. Tuzu pişerken eklemek çorbanın kesilmesine sebep olabilir. Piştikten sonra eklemek daha iyi bir seçenektir. İsteğe göre tereyağında nane ile servis edilebilir. Afiyet olsun.",
+                        child: Text(
+                          " \nMısır cipsi mutfak robotunda güzelce çekilir. Kaşar peynirlerini kalın dilimler olacak şekilde kesilir. Yumurtalar biraz çırpılır ve kaşar peynirleri önce una sonra yumurtaya bulanır. Ardından mısır cipsine de bulanarak dondurucuda 1-2 saat dinlendirilir. Daha sonra kızgın yağda kızarana kadar pişirilir ve sıcak servis edilir. Afiyet olsun.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.w300),
@@ -187,9 +202,6 @@ class _PeynirCubuklariState extends State<PeynirCubuklari> {
           ],
         ),
       ),
-
     );
   }
-
 }
-

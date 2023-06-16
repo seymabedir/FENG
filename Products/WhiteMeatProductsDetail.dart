@@ -41,32 +41,45 @@ class _WhiteMeatProductsDetailState extends State<WhiteMeatProductsDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -84,7 +97,7 @@ class _WhiteMeatProductsDetailState extends State<WhiteMeatProductsDetail> {
       categoryName: "BEYAZ ET",
       productName: "ET",
       imageUrl:
-      "https://cdn.metro-online.com/-/media/Project/MCW/TR_Metro/ultrafresh-et/Hindi-Eti.jpg?rev=0524738c270c42c0871861f02149ae09&w=440&webp=1&hash=7984FAB5FE29C7AFA8EB967ED83E2999",
+          "https://cdn.metro-online.com/-/media/Project/MCW/TR_Metro/ultrafresh-et/Hindi-Eti.jpg?rev=0524738c270c42c0871861f02149ae09&w=440&webp=1&hash=7984FAB5FE29C7AFA8EB967ED83E2999",
       avgRate: 3,
     );
   }

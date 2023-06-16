@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-
 class AyranliPisi extends StatefulWidget {
   const AyranliPisi({Key? key}) : super(key: key);
 
@@ -10,7 +9,6 @@ class AyranliPisi extends StatefulWidget {
 }
 
 class _AyranliPisiState extends State<AyranliPisi> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,32 +40,45 @@ class _AyranliPisiState extends State<AyranliPisi> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -90,7 +101,8 @@ class _AyranliPisiState extends State<AyranliPisi> {
                   ),
                   borderRadius: BorderRadius.circular(100),
                   image: DecorationImage(
-                    image: NetworkImage("https://picniconabroom.com/wp-content/uploads/2021/08/pisi-Turkish-fried-bread-7.jpg"),
+                    image: NetworkImage(
+                        "https://picniconabroom.com/wp-content/uploads/2021/08/pisi-Turkish-fried-bread-7.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -118,7 +130,8 @@ class _AyranliPisiState extends State<AyranliPisi> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Text(" \n Tarifin Adı : Ayranlı Pişi",
+                    child: Text(
+                      " \n Tarifin Adı : Ayranlı Pişi",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                     ),
@@ -139,14 +152,15 @@ class _AyranliPisiState extends State<AyranliPisi> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Text(" \n Malzemeler : "
-                          "\n 5 su bardağı un "
-                          "\n 2 yemek kaşığı sıvı yağ"
-                          "\n 2 su bardağı koyu kıvamlı ayran "
-                          "\n 1 tatlı kaşığı tuz "
-                          "\n 1 paket kabartma tozu "
-                          "\n Kızartmak için : "
-                          "\n 2 su bardağı yağ",
+                      child: Text(
+                        " \n Malzemeler : "
+                        "\n 5 su bardağı un "
+                        "\n 2 yemek kaşığı sıvı yağ"
+                        "\n 2 su bardağı koyu kıvamlı ayran "
+                        "\n 1 tatlı kaşığı tuz "
+                        "\n 1 paket kabartma tozu "
+                        "\n Kızartmak için : "
+                        "\n 2 su bardağı yağ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.w300),
@@ -172,7 +186,8 @@ class _AyranliPisiState extends State<AyranliPisi> {
                       height: 175,
                       width: 325,
                       child: SingleChildScrollView(
-                        child: Text(" \n Derin bir kapta unun ortası havuz gibi açılır. Ayran, sıvı yağ, tuz ve kabartma tozunu eklenerek yoğurulur. Arkasından 3 eşit beze yapıp çok ince olmayacak şekilde hamur açılır. Su bardağı yardımıyla hamur kesilir ve kızgın yağa atılarak pişirilir.Afiyet olsun.",
+                        child: Text(
+                          " \n Derin bir kapta unun ortası havuz gibi açılır. Ayran, sıvı yağ, tuz ve kabartma tozunu eklenerek yoğurulur. Arkasından 3 eşit beze yapıp çok ince olmayacak şekilde hamur açılır. Su bardağı yardımıyla hamur kesilir ve kızgın yağa atılarak pişirilir.Afiyet olsun.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.w300),
@@ -189,9 +204,6 @@ class _AyranliPisiState extends State<AyranliPisi> {
           ],
         ),
       ),
-
     );
   }
-
 }
-

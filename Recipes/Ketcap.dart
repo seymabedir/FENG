@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-
-class Sutlac extends StatefulWidget {
-  const Sutlac({Key? key}) : super(key: key);
+class Ketcap extends StatefulWidget {
+  const Ketcap({Key? key}) : super(key: key);
 
   @override
-  _SutlacState createState() => _SutlacState();
+  _KetcapState createState() => _KetcapState();
 }
 
-class _SutlacState extends State<Sutlac> {
-
+class _KetcapState extends State<Ketcap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,24 +89,25 @@ class _SutlacState extends State<Sutlac> {
             SizedBox(
               height: 10,
             ),
-        ClipOval(
-          child: Container(
-            alignment: Alignment.topCenter,
-            width: 150,
-            height: 150,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 2.0,
-                color: Colors.lightBlueAccent.shade200,
-              ),
-              borderRadius: BorderRadius.circular(100),
-              image: DecorationImage(
-                image: NetworkImage("https://img.freepik.com/free-photo/milk-sweet-wooden-board_140725-4089.jpg?w=826&t=st=1686263487~exp=1686264087~hmac=84c2a03e4faa6cb2cd31f451fe5f7328a1d8d26fd599f0a5b616b31ec35224e5"),
-                fit: BoxFit.cover,
+            ClipOval(
+              child: Container(
+                alignment: Alignment.topCenter,
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 2.0,
+                    color: Colors.lightBlueAccent.shade200,
+                  ),
+                  borderRadius: BorderRadius.circular(100),
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        "https://cdn.yemek.com/mnresize/940/940/uploads/2017/06/aci-sos-tarifi-.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
             SizedBox(
               width: 5.0,
             ),
@@ -131,7 +130,8 @@ class _SutlacState extends State<Sutlac> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Text(" \n Tarifin Adı : Sütlaç",
+                    child: Text(
+                      " \n Tarifin Adı : Acılı Ketçaplı Sos",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                     ),
@@ -152,14 +152,11 @@ class _SutlacState extends State<Sutlac> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Text(" \n Malzemeler : "
-                          "\n 1 litre süt "
-                          "\n 1 su bardağı şeker "
-                          "\n Yarım su bardağı pirinç "
-                          "\n 3 yemek kaşığı buğday nişastası "
-                          "\n 1 paket vanilya "
-                          "\n 2 su bardağı su"
-                          "\n Yarım su bardağı süt",
+                      child: Text(
+                        " \n Malzemeler : "
+                        "\n 6 Yemek kaşığı acılı ya da tatlı Ketçap"
+                        "\n 1 Tatlı kaşığı limon suyu ya da limon sirkesi"
+                        "\n 1 Tatlı kaşığı acılı kırmızı pul biber sosu",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.w300),
@@ -170,53 +167,39 @@ class _SutlacState extends State<Sutlac> {
                     height: 10.0,
                   ),
                   Container(
-                      alignment: Alignment.topCenter,
-                      height: 200,
-                      width: 350,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2.0,
-                          color: Colors.lightBlueAccent.shade200,
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
+                    alignment: Alignment.topCenter,
+                    height: 200,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 2.0,
+                        color: Colors.lightBlueAccent.shade200,
                       ),
-                      child: Container(
-                        height: 175,
-                        width: 325,
-                        child: SingleChildScrollView(
-                          child: Text(" \n Fırında sütlaç için öncelikle pirinci haşlayalım. "
-                              "\n Pirinçleri güzelce yıkadıktan sonra 2 su bardağı su ile "
-                              "\n pişene kadar haşlayın. Çok az sulu kalacaktır. "
-                              "\n Diğer malzemeleri ekleyelim ve sütlacı pişirelim. "
-                              "\n Haşlanan pirinçlerin üzerine sütü, vanilyayı ilave edip kaynatın. "
-                              "\n Karışım kaynamaya başlayınca şekeri ve yarım su bardağı sütle "
-                              "\n karıştırdığınız 3 yemek kaşığı buğday nişastasını ilave ediniz. "
-                              "\n 10-15 dk. daha kaynatıp altını kapatın. Sütlaçları fırına sürelim. "
-                              "\n Fırın için uygun ısıya dayanıklı sütlaç kaselerine sütlaçlarınızı "
-                              "\n paylaştırın. Tepsinize soğuk su doldurun ve sütlaç kaplarını fırın "
-                              "\n tepsinize dizin (Tepsideki su sütlaç kaplarının yarısına kadar gelecek) "
-                              "\n Tepsiyi fırınınızın en üst rafına yerleştirin. 180 derecede, sütlaçlarınız "
-                              "\n kızarana kadar fırınlayın. Afiyet olsun.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black, fontWeight: FontWeight.w300),
-                          ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Container(
+                      height: 175,
+                      width: 325,
+                      child: SingleChildScrollView(
+                        child: Text(
+                          " \nKetçap ve limon suyu bir kapta karıştırılır. Acı sos da eklenir ve iyice karıştırılır. Kapağını kapalı olacak şekilde buzdolabında uzun süre saklanabilir. Afiyet olsun.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.w300),
                         ),
                       ),
                     ),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
-        ],
-      ),
-    ),
-
     );
   }
-
 }
-

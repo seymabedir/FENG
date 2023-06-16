@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
 
-
 class DusesPatates extends StatefulWidget {
   const DusesPatates({Key? key}) : super(key: key);
 
@@ -10,7 +9,6 @@ class DusesPatates extends StatefulWidget {
 }
 
 class _DusesPatatesState extends State<DusesPatates> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,32 +40,45 @@ class _DusesPatatesState extends State<DusesPatates> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -90,7 +101,8 @@ class _DusesPatatesState extends State<DusesPatates> {
                   ),
                   borderRadius: BorderRadius.circular(100),
                   image: DecorationImage(
-                    image: NetworkImage("https://i.elmaelma.com/storage/files/2015/11/9/35649/35649_0.jpg"),
+                    image: NetworkImage(
+                        "https://i.elmaelma.com/storage/files/2015/11/9/35649/35649_0.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -118,7 +130,8 @@ class _DusesPatatesState extends State<DusesPatates> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Text(" \n Tarifin Adı : Düşes Patates",
+                    child: Text(
+                      " \n Tarifin Adı : Düşes Patates",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w300),
                     ),
@@ -139,12 +152,13 @@ class _DusesPatatesState extends State<DusesPatates> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: Text(" \n Malzemeler : "
-                          "\n 3 adetbüyük boy patates(kabukları soyulmuş, haşlanmış) "
-                          "\n 2 yemek kaşığı tereyağı"
-                          "\n 1,5 çay kaşığı tuz "
-                          "\n 1/2 çay kaşığı rendelenmiş muskat cevizi (arzuya göre) "
-                          "\n 2 adet yumurta sarısı ",
+                      child: Text(
+                        " \n Malzemeler : "
+                        "\n 3 adetbüyük boy patates(kabukları soyulmuş, haşlanmış) "
+                        "\n 2 yemek kaşığı tereyağı"
+                        "\n 1,5 çay kaşığı tuz "
+                        "\n 1/2 çay kaşığı rendelenmiş muskat cevizi (arzuya göre) "
+                        "\n 2 adet yumurta sarısı ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.w300),
@@ -170,7 +184,8 @@ class _DusesPatatesState extends State<DusesPatates> {
                       height: 175,
                       width: 325,
                       child: SingleChildScrollView(
-                        child: Text(" \n Patatesler haşlanır ve üzerine tereyağı, muskat cevizi rendesi ve tuz eklenerek püre yapılır. Yumurta sarıları da eklenerek tekrar karıştırılır. Püre, krema sıkma poşetine doldurulur ve istenen duy ile şekil verilir. Fırın tepsisine yağlı kağıt serilerek sıkma işlemine başlanır. Fırın 200 derecede ısıtılır ve patatesler renk değiştirene kadar 20-25 dakika pişirilir. Sıcak servis edilir. Afiyet olsun.",
+                        child: Text(
+                          " \n Patatesler haşlanır ve üzerine tereyağı, muskat cevizi rendesi ve tuz eklenerek püre yapılır. Yumurta sarıları da eklenerek tekrar karıştırılır. Püre, krema sıkma poşetine doldurulur ve istenen duy ile şekil verilir. Fırın tepsisine yağlı kağıt serilerek sıkma işlemine başlanır. Fırın 200 derecede ısıtılır ve patatesler renk değiştirene kadar 20-25 dakika pişirilir. Sıcak servis edilir. Afiyet olsun.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.w300),
@@ -187,9 +202,6 @@ class _DusesPatatesState extends State<DusesPatates> {
           ],
         ),
       ),
-
     );
   }
-
 }
-
