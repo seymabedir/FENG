@@ -47,7 +47,8 @@ class NutritionValuesWidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 20.0,),
+                fontSize: 20.0,
+              ),
             ),
           ),
         ),
@@ -140,12 +141,14 @@ class NutritionValuesWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,
         ),
-        child: Text(
-          this.productInfo,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 16,
+        child: SingleChildScrollView(
+          child: Text(
+            this.productInfo,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+            ),
           ),
         ),
       ),

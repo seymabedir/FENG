@@ -8,6 +8,7 @@ class PickleProductDetail extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -146,17 +147,17 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +175,7 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +197,7 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +322,7 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_PLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +395,7 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_PNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +462,7 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_PHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +529,7 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_PRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_PRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +626,4 @@ class _PickleProductDetailState extends State<PickleProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

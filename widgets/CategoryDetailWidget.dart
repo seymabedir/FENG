@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/utilities/constants.dart';
-import 'package:project/widgets/CategoryList.dart';
 
 class CategoryDetailWidget extends StatelessWidget {
   String title;

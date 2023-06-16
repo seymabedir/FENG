@@ -8,6 +8,7 @@ class WhiteMeatProductDetailWidget extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -21,10 +22,12 @@ class WhiteMeatProductDetailWidget extends StatefulWidget {
   });
 
   @override
-  State<WhiteMeatProductDetailWidget> createState() => _WhiteMeatProductDetailWidgetState();
+  State<WhiteMeatProductDetailWidget> createState() =>
+      _WhiteMeatProductDetailWidgetState();
 }
 
-class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWidget> {
+class _WhiteMeatProductDetailWidgetState
+    extends State<WhiteMeatProductDetailWidget> {
   bool isFav = true;
   bool isToggled1 = false;
   bool isToggled2 = false;
@@ -146,17 +149,17 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +177,7 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +199,7 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +324,7 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_WMLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_WMLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +397,7 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_WMNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_WMNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +464,7 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_WMHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_WMHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +531,7 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_WMRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_WMRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +628,4 @@ class _WhiteMeatProductDetailWidgetState extends State<WhiteMeatProductDetailWid
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

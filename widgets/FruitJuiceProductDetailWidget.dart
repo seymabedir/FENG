@@ -8,6 +8,7 @@ class FruitJuiceProductDetailWidget extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -21,10 +22,12 @@ class FruitJuiceProductDetailWidget extends StatefulWidget {
   });
 
   @override
-  State<FruitJuiceProductDetailWidget> createState() => _FruitJuiceProductDetailWidgetState();
+  State<FruitJuiceProductDetailWidget> createState() =>
+      _FruitJuiceProductDetailWidgetState();
 }
 
-class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailWidget> {
+class _FruitJuiceProductDetailWidgetState
+    extends State<FruitJuiceProductDetailWidget> {
   bool isFav = true;
   bool isToggled1 = false;
   bool isToggled2 = false;
@@ -146,17 +149,17 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +177,7 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +199,7 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +324,7 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_FJLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FJLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +397,7 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_FJNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FJNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +464,7 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_FJHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FJHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +531,7 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_FJRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_FJRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +628,4 @@ class _FruitJuiceProductDetailWidgetState extends State<FruitJuiceProductDetailW
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

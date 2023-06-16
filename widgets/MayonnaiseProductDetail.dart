@@ -8,6 +8,7 @@ class MayonnaiseProductDetail extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -21,7 +22,8 @@ class MayonnaiseProductDetail extends StatefulWidget {
   });
 
   @override
-  State<MayonnaiseProductDetail> createState() => _MayonnaiseProductDetailState();
+  State<MayonnaiseProductDetail> createState() =>
+      _MayonnaiseProductDetailState();
 }
 
 class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
@@ -146,17 +148,17 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +176,7 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +198,7 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +323,7 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_MayoLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_MayoLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +396,7 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_MayoNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_MayoNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +463,7 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_MayoHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_MayoHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +530,7 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_MayoRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_MayoRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +627,4 @@ class _MayonnaiseProductDetailState extends State<MayonnaiseProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

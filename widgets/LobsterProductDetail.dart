@@ -8,6 +8,7 @@ class LobsterProductDetail extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -146,17 +147,17 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +175,7 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +197,7 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +322,7 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_LLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_LLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +395,7 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_LNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_LNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +462,7 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_LHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_LHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +529,7 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_LRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_LRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +626,4 @@ class _LobsterProductDetailState extends State<LobsterProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

@@ -36,19 +36,20 @@ class LabelInfoWidget extends StatelessWidget {
          Center(
            child: Container(
               width: 250,
-              height: 40,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.white60,
+            height: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.white60,
+            ),
+            child: Text(
+              'ETİKET BİLGİLERİ',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
               ),
-              child: Text(
-                'ETİKET BİLGİLERİ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,),
-              ),
+            ),
             ),
          ),
         SizedBox(
@@ -134,20 +135,22 @@ class LabelInfoWidget extends StatelessWidget {
           width: 350,
           height: 300,
           decoration: BoxDecoration(
-          border: Border.all(
-          width: 3.0,
-          color: Color.fromRGBO(13, 71, 161, 10),
+            border: Border.all(
+              width: 3.0,
+              color: Color.fromRGBO(13, 71, 161, 10),
+            ),
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.white,
           ),
-          borderRadius: BorderRadius.circular(5),
-          color: Colors.white,
-          ),
-          child: Text(
-            this.productInfo,
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
+          child: SingleChildScrollView(
+            child: Text(
+              this.productInfo,
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
           ),
         ),

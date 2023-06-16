@@ -152,11 +152,11 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -167,18 +167,18 @@ class _ProductDetailState extends State<ProductDetail> {
                           isToggled2 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled2 ? Colors.yellow : Colors.black,
                         ),
-                          onPressed: toggleIconButton2,
+                        onPressed: toggleIconButton2,
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
-                          onPressed: toggleIconButton3,
+                        onPressed: toggleIconButton3,
                       ),
                     ),
                   ),
@@ -196,7 +196,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -629,6 +629,4 @@ class _ProductDetailState extends State<ProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

@@ -8,6 +8,7 @@ class YoghurtProductDetail extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -146,17 +147,17 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +175,7 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +197,7 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +322,7 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_YLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_YLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +395,7 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_YNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_YNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +462,7 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_YHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_YHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +529,7 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_YRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_YRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +626,4 @@ class _YoghurtProductDetailState extends State<YoghurtProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

@@ -8,6 +8,7 @@ class CrabProductDetail extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -146,17 +147,17 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +175,7 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +197,7 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +322,7 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_CrabLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CrabLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +395,7 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_CrabNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CrabNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +462,7 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_CrabHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CrabHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +529,7 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_CrabRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_CrabRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +626,4 @@ class _CrabProductDetailState extends State<CrabProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

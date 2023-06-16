@@ -8,6 +8,7 @@ class KetchupProductDetail extends StatefulWidget {
   String productName;
   String imageUrl;
   int avgRate;
+
   //bool isFav;
   //bool isReported;
 
@@ -146,17 +147,17 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
           ),
           child: Center(
             child: Row(
-              //yıldızlar
+                //yıldızlar
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled1 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled1 ? Colors.yellow : Colors.black,
                         ),
-                        onPressed:toggleIconButton1,
+                        onPressed: toggleIconButton1,
                       ),
                     ),
                   ),
@@ -174,7 +175,7 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled3 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled3 ? Colors.yellow : Colors.black,
                         ),
@@ -196,7 +197,7 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
                   Expanded(
                     child: Container(
                       child: IconButton(
-                        icon:  Icon(
+                        icon: Icon(
                           isToggled5 ? Icons.star : Icons.star_border_outlined,
                           color: isToggled5 ? Colors.yellow : Colors.black,
                         ),
@@ -321,8 +322,7 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_KLI);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_KLI);
                 },
                 child: Container(
                   child: Center(
@@ -395,8 +395,7 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_KNV);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_KNV);
                 },
                 child: Container(
                   child: Center(
@@ -463,8 +462,7 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_KHC);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_KHC);
                 },
                 child: Container(
                   child: Center(
@@ -531,8 +529,7 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
             ClipOval(
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(Constants.ROUTE_KRR);
+                  Navigator.of(context).pushNamed(Constants.ROUTE_KRR);
                 },
                 child: Container(
                   child: Center(
@@ -629,6 +626,4 @@ class _KetchupProductDetailState extends State<KetchupProductDetail> {
       isToggled5 = !isToggled5;
     });
   }
-
-
 }

@@ -1,11 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:project/Products/MilkDetail.dart';
 import 'package:project/pages/app_widget.dart';
 import 'package:project/services/dynamic_link_service.dart';
 import 'package:project/utilities/routes.dart';
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

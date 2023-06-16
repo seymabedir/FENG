@@ -49,7 +49,8 @@ class HealthyConsumptionWidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 20.0,),
+                fontSize: 20.0,
+              ),
             ),
           ),
         ),
@@ -132,55 +133,53 @@ class HealthyConsumptionWidget extends StatelessWidget {
 
   _buildHealConsInfo(BuildContext context) {
     return Center(
-          child: Container(
-            width: 350,
-            height: 150,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 3.0,
-                color: Color.fromRGBO(13, 71, 161, 10),
-              ),
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.white,
-            ),
-            child: SingleChildScrollView(
-              child: Text(
-                this.productInfo,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          )
-      );
+        child: Container(
+      width: 350,
+      height: 150,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 3.0,
+          color: Color.fromRGBO(13, 71, 161, 10),
+        ),
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.white,
+      ),
+      child: SingleChildScrollView(
+        child: Text(
+          this.productInfo,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+      ),
+    ));
   }
 
   _buildConditions(BuildContext context) {
     return Center(
-          child: Container(
-            width: 350,
-            height: 150,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 3.0,
-                color: Color.fromRGBO(13, 71, 161, 10),
-              ),
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.white,
-            ),
-            child: SingleChildScrollView(
-              child: Text(
-                this.condition,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          )
-      );
+        child: Container(
+      width: 350,
+      height: 150,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 3.0,
+          color: Color.fromRGBO(13, 71, 161, 10),
+        ),
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.white,
+      ),
+      child: SingleChildScrollView(
+        child: Text(
+          this.condition,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+      ),
+    ));
   }
 }
