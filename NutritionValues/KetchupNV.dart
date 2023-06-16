@@ -36,32 +36,45 @@ class KetchupNV extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -73,14 +86,18 @@ class KetchupNV extends StatelessWidget {
   _buildNutriValues() {
     return NutritionValuesWidget(
       categoryName: "HAZIR/PAKETLİ GIDALAR",
-      imageUrl: "https://img.freepik.com/free-photo/ketchup-tomato-sauce-with-fresh-tomato_1150-38249.jpg?w=900&t=st=1686229802~exp=1686230402~hmac=b3169fd2f446327a078efe74079de31fbcd89206a5ac8d5833f2dc952e68a7a0",
+      imageUrl:
+          "https://img.freepik.com/free-photo/ketchup-tomato-sauce-with-fresh-tomato_1150-38249.jpg?w=900&t=st=1686229802~exp=1686230402~hmac=b3169fd2f446327a078efe74079de31fbcd89206a5ac8d5833f2dc952e68a7a0",
       productName: "KETÇAP",
-      productInfo: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "\n 100gram için: "
+          "\n Enerji:476kj/112kcal  "
+          "\n Yağ:0.1g "
+          "\n Doymuş Yağ: 0.1 g "
+          "\n Karbonhidrat 25.3g "
+          "\n Şekerler:24.8g "
+          "\n Protein:1.4g "
+          "\n Tuz:1.7g. "
+          "\n Urunlerimizde DOMUZ YAĞI ve KATKILARI yoktur.",
     );
   }
 }

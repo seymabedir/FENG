@@ -36,32 +36,45 @@ class KetchupLI extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -79,14 +92,12 @@ class KetchupLI extends StatelessWidget {
   _Label() {
     return LabelInfoWidget(
       categoryName: "HAZIR/PAKETLİ GIDALAR",
-      imageUrl: "https://img.freepik.com/free-photo/ketchup-tomato-sauce-with-fresh-tomato_1150-38249.jpg?w=900&t=st=1686229802~exp=1686230402~hmac=b3169fd2f446327a078efe74079de31fbcd89206a5ac8d5833f2dc952e68a7a0",
+      imageUrl:
+          "https://img.freepik.com/free-photo/ketchup-tomato-sauce-with-fresh-tomato_1150-38249.jpg?w=900&t=st=1686229802~exp=1686230402~hmac=b3169fd2f446327a078efe74079de31fbcd89206a5ac8d5833f2dc952e68a7a0",
       productName: "KETÇAP",
-      productInfo: "Tam yağlu süt."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo:
+          "\n İçindekiler: Domates (100gr ketçapta 180gr domates kullanılmıştır.) Şeker Sirke, Tuz, Baharatlar (kereviz içerir), Soğan Tozu, Sarımsak Tozu "
+          "\n Tavsiye edilen tüketim tarihi ambalaj üzerindedir ve aynı zamanda parti numarasıdır. Açıldıktan sonra buzdolabında muhafaza ediniz, 8 haftada tüketiniz.",
     );
   }
 

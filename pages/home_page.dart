@@ -4,7 +4,6 @@ import 'package:project/pages/sign_in_page.dart';
 import 'package:project/services/providers.dart';
 import 'package:project/utilities/constants.dart';
 
-
 class HomePage extends ConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -41,37 +40,49 @@ class HomePage extends ConsumerWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
       ),
-
       endDrawer: Drawer(
         backgroundColor: Colors.white60,
         child: ListView(
@@ -184,8 +195,8 @@ class HomePage extends ConsumerWidget {
                   height: 60.0,
                   color: Colors.white,
                   child: ListTile(
-                    leading: const Icon(Icons.exit_to_app,
-                        color: Colors.black87),
+                    leading:
+                        const Icon(Icons.exit_to_app, color: Colors.black87),
                     title: const Text('Çıkış'),
                     onTap: () async {
                       print('çıkış yapıldı');
@@ -202,7 +213,6 @@ class HomePage extends ConsumerWidget {
           ],
         ),
       ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

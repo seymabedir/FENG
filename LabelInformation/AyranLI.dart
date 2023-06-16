@@ -36,32 +36,45 @@ class AyranLI extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -79,9 +92,11 @@ class AyranLI extends StatelessWidget {
   _Label() {
     return LabelInfoWidget(
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "https://img.freepik.com/free-photo/ayran-drink-with-mint-cucumber-glass-wooden-table_123827-21428.jpg?w=996&t=st=1686232158~exp=1686232758~hmac=dfbd09bf4b19944fd01a4878e8cba36619c0d8a3481c0d692644a6642ddf601d",
+      imageUrl:
+          "https://img.freepik.com/free-photo/ayran-drink-with-mint-cucumber-glass-wooden-table_123827-21428.jpg?w=996&t=st=1686232158~exp=1686232758~hmac=dfbd09bf4b19944fd01a4878e8cba36619c0d8a3481c0d692644a6642ddf601d",
       productName: "AYRAN",
-      productInfo: "Son tüketim tarihi (STT) kapaktadır. Son tüketim tarihinden önce tüketilmelidir.Parti seri no son tüketim tarihidir. (+3°C)-(+5°C)'de muhafaza ediniz."
+      productInfo:
+          "Son tüketim tarihi (STT) kapaktadır. Son tüketim tarihinden önce tüketilmelidir.Parti seri no son tüketim tarihidir. (+3°C)-(+5°C)'de muhafaza ediniz."
           "\n Içindekiler: Pastörize İnek Sütü, İçme Suyu,Yoğurt Mayası, Sofra Tuzu. Ağırlığınca en az %1,5 süt yağı ve en az %2 süt proteini içerir. En fazla %1 tuz içerir."
           "\n STARTER KULTURU KULLANILMAMAKTADIR",
     );

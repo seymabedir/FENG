@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project/utilities/constants.dart';
-import 'package:project/widgets/FavItemWidget.dart';
 
 
 class FavoriteItemPage extends StatefulWidget {
@@ -44,33 +43,46 @@ class _FavoriteItemPageState extends State<FavoriteItemPage> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
                   color: Colors.grey,
-                  size: 40,),
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),

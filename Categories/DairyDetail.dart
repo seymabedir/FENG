@@ -43,32 +43,45 @@ class _DairyDetailState extends State<DairyDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -84,17 +97,21 @@ class _DairyDetailState extends State<DairyDetail> {
   _buildCategoryDetailWidget(context) {
     return CategoryDetailWidget(
       title: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "https://www.dairyindustries.com/wp-content/uploads/thumbnail_Dairy-Products.jpg",
-      info: "Bu grupta yer alan başlıca besinler süt, yoğurt ve peynirdir.Süt grubu besinler protein, kalsiyum, B2 vitamini (riboflavin) ve B12 vitamini başta olmak üzere birçok besin ögesinin önemli kaynağıdır. Süt grubu besinlerde bulunan kalsiyum diğer besin kaynaklarına göre vücut tarafından daha iyi kullanılır. Kalsiyum kemiklerin ve dişlerin sağlıklı gelişiminde ve hücre çalışmasında önemli rol oynar. Süt ve süt ürünlerinin içerdiği kaliteli protein her yaş grubunda vücudun çalışması; çocukluk döneminde büyüme, yetişkinlikte ise doku onarımının sağlanması için gereklidir. Bu grupta yer alan besinlerde bulunan B vitaminleri, başta kırmızı kan hücreleri ile sinir hücreleri olmak üzere tüm vücutta önemli işlevlere sahiptir. Süt ve süt ürünleri yağ içeriği yönünden de zengindir. Doymuş yağ ve kolesterol ile yağda eriyen A vitamini içerirler.",
+      imageUrl:
+          "https://www.dairyindustries.com/wp-content/uploads/thumbnail_Dairy-Products.jpg",
+      info:
+          "Bu grupta yer alan başlıca besinler süt, yoğurt ve peynirdir.Süt grubu besinler protein, kalsiyum, B2 vitamini (riboflavin) ve B12 vitamini başta olmak üzere birçok besin ögesinin önemli kaynağıdır. Süt grubu besinlerde bulunan kalsiyum diğer besin kaynaklarına göre vücut tarafından daha iyi kullanılır. Kalsiyum kemiklerin ve dişlerin sağlıklı gelişiminde ve hücre çalışmasında önemli rol oynar. Süt ve süt ürünlerinin içerdiği kaliteli protein her yaş grubunda vücudun çalışması; çocukluk döneminde büyüme, yetişkinlikte ise doku onarımının sağlanması için gereklidir. Bu grupta yer alan besinlerde bulunan B vitaminleri, başta kırmızı kan hücreleri ile sinir hücreleri olmak üzere tüm vücutta önemli işlevlere sahiptir. Süt ve süt ürünleri yağ içeriği yönünden de zengindir. Doymuş yağ ve kolesterol ile yağda eriyen A vitamini içerirler.",
       products: [
         Product(
           title: "SÜT",
-          imageUrl: "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
+          imageUrl:
+              "https://www.alibabasut.com/wp-content/uploads/2021/12/gunluk_taze_inek_sutu.jpg",
           route: Constants.ROUTE_MILK,
         ),
         Product(
           title: "YOĞURT",
-          imageUrl: "https://img.freepik.com/free-photo/greek-yogurt-wooden-bowl-isolated-white-background_123827-22632.jpg?w=996&t=st=1686231965~exp=1686232565~hmac=b4a28162470b78fe69f747bf6de086549ada7de4f2f87b8b3bcd19636b7d64cd",
+          imageUrl:
+              "https://img.freepik.com/free-photo/greek-yogurt-wooden-bowl-isolated-white-background_123827-22632.jpg?w=996&t=st=1686231965~exp=1686232565~hmac=b4a28162470b78fe69f747bf6de086549ada7de4f2f87b8b3bcd19636b7d64cd",
           route: Constants.ROUTE_YOGHURT,
         ),
         Product(

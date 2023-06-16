@@ -36,32 +36,45 @@ class CheeseHC extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -74,7 +87,8 @@ class CheeseHC extends StatelessWidget {
   _buildHealthyConsumption() {
     return HealthyConsumptionWidget(
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "https://img.freepik.com/free-photo/delicious-pieces-cheese_144627-43352.jpg?w=900&t=st=1686232003~exp=1686232603~hmac=6207bbbd55a01f77855c857b0d440e233ced14f7f653b412bb856c5ac90e1dc6",
+      imageUrl:
+          "https://img.freepik.com/free-photo/delicious-pieces-cheese_144627-43352.jpg?w=900&t=st=1686232003~exp=1686232603~hmac=6207bbbd55a01f77855c857b0d440e233ced14f7f653b412bb856c5ac90e1dc6",
       productName: "PEYNİR",
       productInfo: "•	Staphylococcus spp."
           "•	Salmonella "
@@ -89,7 +103,6 @@ class CheeseHC extends StatelessWidget {
           "\n Ateş, ağrı, titreme ve ishal zehirlenme durumunda karşılaşılan en yaygın semptomlardandır."
           "\n Peynir tüketiminde dikkat edimesi gerekenler; "
           "\n Açıkta satılan peynirler zararlı mikroorganizmaları içinde barındırmaya, çevreden kapmaya elverişli olduğu için tercih edilmemelidir. Sofraya konulmuş olan peynirler arttıysa, eski kabı içerisine koyulmamalı farklı bir kapta saklanmalıdır.",
-
     );
   }
 }

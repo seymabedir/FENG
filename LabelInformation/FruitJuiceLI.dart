@@ -36,32 +36,45 @@ class FruitJuiceLI extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -79,14 +92,11 @@ class FruitJuiceLI extends StatelessWidget {
   _Label() {
     return LabelInfoWidget(
       categoryName: "MEYVE SULARI",
-      imageUrl: "https://img.freepik.com/free-photo/top-view-colorful-fruit-juices_23-2148227560.jpg?w=996&t=st=1686240897~exp=1686241497~hmac=bbcf8ead4df38a493b0fb96010033ab33c028fedda4a9631ba6705772a09173c",
+      imageUrl:
+          "https://img.freepik.com/free-photo/top-view-colorful-fruit-juices_23-2148227560.jpg?w=996&t=st=1686240897~exp=1686241497~hmac=bbcf8ead4df38a493b0fb96010033ab33c028fedda4a9631ba6705772a09173c",
       productName: "MEYVE SUYU",
-      productInfo: "Tam yağlu süt."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
+      productInfo: "\n İCİNDEKİLER: Portakal suyu, Nar suyu. "
+          "\n İÇMEDEN ÖNCE ÇALKALAYINIZ. DIKKAT! Buzdolabınızda saklayınız. Son kullanım tarihi dolmuş ürünler patlama riski taşıyabilir. Hiçbir koruyucu katkı maddesi içermemektedir. No additives inside. Son kullanma tarihi kapaktadır.",
     );
   }
 

@@ -36,32 +36,45 @@ class AyranHC extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -73,18 +86,16 @@ class AyranHC extends StatelessWidget {
 
   _buildHealthyConsumption() {
     return HealthyConsumptionWidget(
-      categoryName: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "https://img.freepik.com/free-photo/ayran-drink-with-mint-cucumber-glass-wooden-table_123827-21428.jpg?w=996&t=st=1686232158~exp=1686232758~hmac=dfbd09bf4b19944fd01a4878e8cba36619c0d8a3481c0d692644a6642ddf601d",
-      productName: "AYRAN",
-      productInfo: "Ayranda bulunabilecek patojenler : "
-          "\n •	E.coli O157:H7"
-          "\n •	Salmonella"
-          "\n •	Listeria monocytogenes"
-          "\n •	Enterohemorrhagic Escherichia coli (EHEC) ",
-      condition: ""
-
-
-    );
+        categoryName: "SÜT VE SÜT ÜRÜNLERİ",
+        imageUrl:
+            "https://img.freepik.com/free-photo/ayran-drink-with-mint-cucumber-glass-wooden-table_123827-21428.jpg?w=996&t=st=1686232158~exp=1686232758~hmac=dfbd09bf4b19944fd01a4878e8cba36619c0d8a3481c0d692644a6642ddf601d",
+        productName: "AYRAN",
+        productInfo: "Ayranda bulunabilecek patojenler : "
+            "\n •	E.coli O157:H7"
+            "\n •	Salmonella"
+            "\n •	Listeria monocytogenes"
+            "\n •	Enterohemorrhagic Escherichia coli (EHEC) ",
+        condition: "");
   }
 }
 

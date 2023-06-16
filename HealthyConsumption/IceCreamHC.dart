@@ -36,32 +36,45 @@ class IceCreamHC extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -74,21 +87,15 @@ class IceCreamHC extends StatelessWidget {
   _buildHealthyConsumption() {
     return HealthyConsumptionWidget(
       categoryName: "SÜT VE SÜT ÜRÜNLERİ",
-      imageUrl: "https://img.freepik.com/free-photo/ice-cream_144627-17284.jpg?w=360&t=st=1686232365~exp=1686232965~hmac=bdd71bf1c789afd411ba9e3431d314772af3c09d8e8fdc62aab03f013856f215",
+      imageUrl:
+          "https://img.freepik.com/free-photo/ice-cream_144627-17284.jpg?w=360&t=st=1686232365~exp=1686232965~hmac=bdd71bf1c789afd411ba9e3431d314772af3c09d8e8fdc62aab03f013856f215",
       productName: "DONDURMA",
-      productInfo: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
-      condition: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
-
+      productInfo:
+          "\n Dondurmada bulunabilecek patojenler : Pseudomonas, Acinetobacter, Moraxella, Micrococcus, Flavobacterium, Chromobacterium, Serratia ve Bacillus"
+          "\n Dikkat edilmesi gerekenler : "
+          "\n Dondurma eriyip tekrar donarsa üzerinde kristaller oluşur. Üzerinde kristal bulunan dondurmalar satın alınmamalıdır. Süt kolay bozulabilir bir maddedir, eritme ve dondurma sırasında mikroorganizmalar gelişebilr ve bu durum risklidir.",
+      condition:
+          "Semptomlar: Bulantı, kusma, kramp tarzı karın ağrıları, ishal ve ateş zehirlenme durumunda oluşabilecek semptomlardır. ",
     );
   }
 }

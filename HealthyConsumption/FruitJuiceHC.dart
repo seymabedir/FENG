@@ -36,32 +36,45 @@ class FruitJuiceHC extends StatelessWidget {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -74,21 +87,24 @@ class FruitJuiceHC extends StatelessWidget {
   _buildHealthyConsumption() {
     return HealthyConsumptionWidget(
       categoryName: "MEYVE SULARI",
-      imageUrl: "https://img.freepik.com/free-photo/top-view-colorful-fruit-juices_23-2148227560.jpg?w=996&t=st=1686240897~exp=1686241497~hmac=bbcf8ead4df38a493b0fb96010033ab33c028fedda4a9631ba6705772a09173c",
+      imageUrl:
+          "https://img.freepik.com/free-photo/top-view-colorful-fruit-juices_23-2148227560.jpg?w=996&t=st=1686240897~exp=1686241497~hmac=bbcf8ead4df38a493b0fb96010033ab33c028fedda4a9631ba6705772a09173c",
       productName: "MEYVE SUYU",
-      productInfo: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
-      condition: "xxxxxxxxxxxx."
-          '\n * LAKTOZ İÇERİR.'
-          ' \n * Glüten içermez '
-          '\n * Açıldıktan sonra 2 gün içinde tüketilmeli.'
-          '\n * 1C ile 10C arasında buzdolabında saklanmalı.'
-          '\n * Geçerlilik : 90 Gün"',
-
+      productInfo: "Meyve suyunda bulunabilecek patojenler : "
+          "\n •	Esericchia coli "
+          "\n •	Salmonella "
+          "\n •	Listeria monocytogenes "
+          "\n •	Shigella "
+          "\n •	Stapyhlococcus"
+          "\n Korunma yolları: "
+          "\n Meyve suları, zararlı bakterileri öldürmek için pastörize edilir (ısıl işlem görür). İşlenmemiş meyve sularının satın alınmasını önlemek için uyarı etiketlerine dikkat edilmelidir. İşlenmiş ürünleri marketlerin soğutma bölümlerinde bulunabilir. İşlenmemiş meyve suyu alınmamasına dikkat edilmelidir, zehirlenme riski yüksektir. Endüstriyel işlemler dışında, doğal antimikrobiyaller de koruma yöntemlerinden biridir. Benzoik asit, kaprik asit, sitrik asit, laktik asit, malik asit, potasyum sorbat, sodyum benzoat ve sorbik asit kullanılabilecek bazı doğal antimikrobiyal malzemelerdir.",
+      condition:
+          "\n Semptomlar : Kusma, ishal, karın ağrısı, ateş, baş ağrısı ve vücut ağrısı gibi grip benzeri semptomlar zehirlenme durumunda görülebilmektedir."
+          "\n Evde meyve suyu yapımında dikkat edilmesi gerekenler;"
+          "\n •	Ellerin iyice yıkandığından emin olunmalıdır. "
+          "\n •	Meyve ve sebzelerde hasarlı kısım varsa kesilmelidir. Çürük olduğu düşünülüyorsa kullanılmayıp atılmalıdır. "
+          "\n •	Meyve ve sebzeler su altında iyice yıkanarak temizlenmelidir. Soyma işlemi yapılacaksa bile önce güzelce yıkanmalıdır. "
+          "\n •	Yıkadıktan sonra, yüzeyde bulunabilecek bakterileri daha da azaltmak için temiz bir bez havlu veya kağıt havlu ile ürün kurulanmalıdır.",
     );
   }
 }

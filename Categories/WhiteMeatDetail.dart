@@ -43,32 +43,45 @@ class _WhiteMeatDetailState extends State<WhiteMeatDetail> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),
@@ -86,17 +99,21 @@ class _WhiteMeatDetailState extends State<WhiteMeatDetail> {
   _buildCategoryDetailWidget(context) {
     return CategoryDetailWidget(
       title: "BEYAZ ET",
-      imageUrl: "https://img.freepik.com/free-photo/raw-chicken-fillet-with-garlic-pepper-rosemary-wooden-chopping-board_1150-37785.jpg?w=996&t=st=1686239310~exp=1686239910~hmac=4c8a803efa266f04e0f5ebd3953e768e5a054faed2206bc627ef68eb2d391b27",
-      info: "Beyaz et, tavuk eti, ördek eti, kaz eti, horoz eti ve hindi eti gibi kümes hayvanlarıyla birlikte birçok deniz ürününü (örn. balık eti, yengeç eti, ahtapot eti ve kalamar eti) de içerisine alan bir sınıflandırmadır. Kırmızı etten farklı, miyoglobin yoktur. İsmini pişirilmeden önceki soluk veya açık renginden almaktadır.",
+      imageUrl:
+          "https://img.freepik.com/free-photo/raw-chicken-fillet-with-garlic-pepper-rosemary-wooden-chopping-board_1150-37785.jpg?w=996&t=st=1686239310~exp=1686239910~hmac=4c8a803efa266f04e0f5ebd3953e768e5a054faed2206bc627ef68eb2d391b27",
+      info:
+          "Beyaz et, tavuk eti, ördek eti, kaz eti, horoz eti ve hindi eti gibi kümes hayvanlarıyla birlikte birçok deniz ürününü (örn. balık eti, yengeç eti, ahtapot eti ve kalamar eti) de içerisine alan bir sınıflandırmadır. Kırmızı etten farklı, miyoglobin yoktur. İsmini pişirilmeden önceki soluk veya açık renginden almaktadır.",
       products: [
         Product(
           title: "TAVUK",
-          imageUrl: "https://img.freepik.com/free-photo/front-view-fresh-raw-chicken-with-tomatoes-dark-meal-animal-photo-food-color-chicken-kitchen-meat_179666-44050.jpg?w=996&t=st=1686239382~exp=1686239982~hmac=2e62175a23543e2a59403488c6c1b98b4ab653713bf0ca8a129aa1bc10ea8069",
+          imageUrl:
+              "https://img.freepik.com/free-photo/front-view-fresh-raw-chicken-with-tomatoes-dark-meal-animal-photo-food-color-chicken-kitchen-meat_179666-44050.jpg?w=996&t=st=1686239382~exp=1686239982~hmac=2e62175a23543e2a59403488c6c1b98b4ab653713bf0ca8a129aa1bc10ea8069",
           route: Constants.ROUTE_WHITE_MEAT,
         ),
         Product(
           title: "HİNDİ",
-          imageUrl: "https://cdn.metro-online.com/-/media/Project/MCW/TR_Metro/ultrafresh-et/Hindi-Eti.jpg?rev=0524738c270c42c0871861f02149ae09&w=440&webp=1&hash=7984FAB5FE29C7AFA8EB967ED83E2999",
+          imageUrl:
+              "https://cdn.metro-online.com/-/media/Project/MCW/TR_Metro/ultrafresh-et/Hindi-Eti.jpg?rev=0524738c270c42c0871861f02149ae09&w=440&webp=1&hash=7984FAB5FE29C7AFA8EB967ED83E2999",
           route: Constants.ROUTE_WHITE_MEAT,
         ),
 

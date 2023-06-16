@@ -19,8 +19,11 @@ class _SendRecipePageState extends State<SendRecipePage> {
       backgroundColor: Color.fromRGBO(200, 235, 254, 10),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(200, 235, 254, 10),
-        title: const Text('TARİFİNİZİ PAYLAŞMAK İSTER MİSİNİZ ?',
-        style: TextStyle(fontSize: 15.0,),
+        title: const Text(
+          'TARİFİNİZİ PAYLAŞMAK İSTER MİSİNİZ ?',
+          style: TextStyle(
+            fontSize: 15.0,
+          ),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -46,32 +49,45 @@ class _SendRecipePageState extends State<SendRecipePage> {
                   Navigator.of(context).pushNamed(Constants.ROUTE_HOME);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.search,
+                icon: const Icon(
+                  Icons.search,
                   size: 40,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_SEARCH);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.favorite_border_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.favorite_border_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_FAV);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               IconButton(
-                icon: const Icon(Icons.dataset_outlined,
-                  size: 40,),
+                icon: const Icon(
+                  Icons.dataset_outlined,
+                  size: 40,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushNamed(Constants.ROUTE_CATEGORY);
                 },
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
             ],
           ),
         ),

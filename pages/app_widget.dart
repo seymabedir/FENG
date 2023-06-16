@@ -21,19 +21,5 @@ class AppWidget extends ConsumerWidget {
       );
     });
     return const SignInPage();
-    /* return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/yemek.jpg'),
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-        ),
-      ),
-    ); */
   }
 }
